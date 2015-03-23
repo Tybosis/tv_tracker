@@ -71,4 +71,10 @@ class ShowsController < ApplicationController
     def show_params
       params.require(:show).permit(:name, :air_time, :status, :next_episode, :overview, :banner, :poster)
     end
+
+    def set_show_stats
+      tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
+      results = tvdb.search(@search)
+      show = tvdb.get_series_by_id(results[0]["seriesid"])
+    end
 end
