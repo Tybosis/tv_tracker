@@ -11,9 +11,18 @@ gem 'sqlite3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'tvdb_party'
+gem 'devise'
+gem 'minitest-rails-capybara'
 
 group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'guard'
+  gem 'guard-minitest'
+  gem 'minitest-rails-capybara'
+  gem 'minitest-reporters'
 end
