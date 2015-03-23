@@ -22,7 +22,8 @@
 </ul>
 
 <ul>
-  <% results_3 = tvdb.search('the flash (2014)') %>
+  <% results_3 = tvdb.search('the flash') %>
+  <%= results_3.map { |show| show["SeriesName"] } %>
   <% flash = tvdb.get_series_by_id(results_3[0]["seriesid"]) %>
   <li><img src="<%= flash.series_banners('en').first.url %>" ></li>
   <li><%= flash.air_time %></li>
