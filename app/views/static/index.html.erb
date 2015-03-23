@@ -1,0 +1,26 @@
+<%= image_tag("banner.jpg", :alt => "Track Your Favorite Tv Shows Banner") %>
+
+<div id="example_callouts">
+  <div class="example_co">
+    <h3>Your Calendar</h3>
+    <%= image_tag("example_co1.jpg", :alt => "Your calendar") %>
+  </div>
+
+  <div class="example_co">
+    <h3>Your Show List</h3>
+    <%= image_tag("example_co2.jpg", :alt => "Your show list") %>
+  </div>
+
+  <div class="example_co">
+    <h3>List of Shows</h3>
+    <%= image_tag("example_co3.jpg", :alt => "All the shows you could ever watch") %>
+  </div>
+</div>
+
+<div class="clear">
+  <% if user_signed_in? %>
+    <%= link_to "Customize your tv", user_shows_page %>
+  <% else %>
+    <%= link_to "Customize your tv", new_user_sesseion_path %>
+  <% end %>
+</div>
