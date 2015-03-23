@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'tvdb_party'
 gem 'devise'
+gem 'minitest-rails-capybara'
 
 group :development, :test do
   gem 'byebug'
