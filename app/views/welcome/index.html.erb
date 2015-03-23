@@ -1,0 +1,55 @@
+<ul>
+  <% tvdb = TvdbParty::Search.new("A42FACB54E7022B1") %>
+  <% results_1 = tvdb.search('game of thrones') %>
+  <% got = tvdb.get_series_by_id(results_1[0]["seriesid"]) %>
+  <li><img src="<%= got.series_banners('en').first.url %>" ></li>
+  <li><%= got.air_time %></li>
+  <li><%= got.status %></li>
+  <li><%= got.episodes.last.air_date %></li>
+  <li><%= got.overview %></li>
+  <li><img class="poster" src="<%= got.posters('en').first.url %>" > </li>
+</ul>
+
+<ul>
+  <% results_2 = tvdb.search('broad city') %>
+  <% broad = tvdb.get_series_by_id(results_2[0]["seriesid"]) %>
+  <li><img src="<%= broad.series_banners('en').first.url %>" ></li>
+  <li><%= broad.air_time %></li>
+  <li><%= broad.status %></li>
+  <li><%= broad.episodes.last.air_date %></li>
+  <li><%= broad.overview %></li>
+  <li><img class="poster" src="<%= broad.posters('en').first.url %>" > </li>
+</ul>
+
+<ul>
+  <% results_3 = tvdb.search('the flash (2014)') %>
+  <% flash = tvdb.get_series_by_id(results_3[0]["seriesid"]) %>
+  <li><img src="<%= flash.series_banners('en').first.url %>" ></li>
+  <li><%= flash.air_time %></li>
+  <li><%= flash.status %></li>
+  <li><%= flash.episodes.map{ |x| x.air_date } %></li>
+  <li><%= flash.overview %></li>
+  <li><img class="poster" src="<%= flash.posters('en').first.url %>" > </li>
+</ul>
+
+<ul>
+  <% results_4 = tvdb.search('Mad Men') %>
+  <% mad_men = tvdb.get_series_by_id(results_4[0]["seriesid"]) %>
+  <li><img src="<%= mad_men.series_banners('en').first.url %>" ></li>
+  <li><%= mad_men.air_time %></li>
+  <li><%= mad_men.status %></li>
+  <li><%= mad_men.episodes.map{ |x| x.air_date } %></li>
+  <li><%= mad_men.overview %></li>
+  <li><img class="poster" src="<%= mad_men.posters('en').last.url %>" > </li>
+</ul>
+
+<ul>
+  <% results_5 = tvdb.search("Marvel's Daredevil") %>
+  <% daredevil = tvdb.get_series_by_id(results_5[0]["seriesid"]) %>
+  <li><img src="<%= daredevil.series_banners('en').first.url %>" ></li>
+  <li><%= daredevil.air_time %></li>
+  <li><%= daredevil.status %></li>
+  <li><%= daredevil.episodes.map{ |x| x.air_date } %></li>
+  <li><%= daredevil.overview %></li>
+  <li><img class="poster" src="<%= daredevil.posters('en').last.url %>" > </li>
+</ul>
