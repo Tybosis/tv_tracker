@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resource :users
   resources :shows
 
   devise_for :users
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+  get 'users/:id/shows' => 'users#users_shows'
   root 'static#index'
 
   # Example of regular route:
