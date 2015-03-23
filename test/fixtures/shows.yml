@@ -1,0 +1,20 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  air_time: MyString
+  status: MyString
+  next_episode: MyString
+  overview: MyString
+  banner: MyString
+  poster: MyString
+
+two:
+  name: MyString
+  air_time: MyString
+  status: MyString
+  next_episode: MyString
+  overview: MyString
+  banner: MyString
+  poster: MyString

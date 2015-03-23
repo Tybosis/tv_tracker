@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @show.name %>
+</p>
+
+<p>
+  <strong>Air time:</strong>
+  <%= @show.air_time %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @show.status %>
+</p>
+
+<p>
+  <strong>Next episode:</strong>
+  <%= @show.next_episode %>
+</p>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @show.overview %>
+</p>
+
+<p>
+  <strong>Banner:</strong>
+  <%= @show.banner %>
+</p>
+
+<p>
+  <strong>Poster:</strong>
+  <%= @show.poster %>
+</p>
+
+<%= link_to 'Edit', edit_show_path(@show) %> |
+<%= link_to 'Back', shows_path %>
