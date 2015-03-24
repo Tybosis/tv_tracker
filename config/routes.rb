@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :shows, only: [:index, :show]
 
+  get '/welcome' => 'welcome#index'
   root 'static#index'
 
   # Example of regular route:

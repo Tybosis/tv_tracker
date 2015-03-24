@@ -1,18 +1,18 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  email: MyString
-  address: MyString
-  city: MyString
-  state: MyString
-  zip: 1
+kevin:
+  name: Kevin
+  email: kevin@example.com
+  address: something
+  city: seattle
+  state: wa
+  zip: 98155
 
-two:
-  name: MyString
-  email: MyString
-  address: MyString
-  city: MyString
-  state: MyString
-  zip: 1
+tyler:
+  name: Tyler
+  email: tyler@example.com
+  address: something
+  city: seattle
+  state: wa
+  zip: 98122

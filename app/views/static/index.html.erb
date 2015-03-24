@@ -19,7 +19,7 @@
 
 <div class="clear">
   <% if user_signed_in? %>
-    <%= link_to "Customize your tv", user_shows_page %>
+    <%= link_to "Customize your tv", #profiles_shows_index current_user.profile %>
   <% else %>
     <%= link_to "Customize your tv", new_user_session_path %>
   <% end %>
