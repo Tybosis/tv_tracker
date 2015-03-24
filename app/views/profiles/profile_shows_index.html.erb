@@ -5,7 +5,7 @@
     <div class="calendar-titles">
       <% @profile.shows.each do |show| %>
         <a href="<%= show_path show.id %>">
-          <%= show.names %>
+          <%= show.name %>
         </a>
       <% end %>
     </div>
