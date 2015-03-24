@@ -35,4 +35,9 @@
   <img src="<%= @show.poster %>">
 </p>
 
+<%= form_for @profile do |f| %>
+  <%= f.hidden_field :show_ids, value: @profile.show_ids << @show.id %>
+  <%= f.submit "Add show to my profile" %>
+<% end %>
+
 <%= link_to 'Back', shows_path %>

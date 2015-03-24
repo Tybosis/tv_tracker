@@ -11,6 +11,7 @@ class ShowsController < ApplicationController
   # GET /shows/1
   # GET /shows/1.json
   def show
+    @profile = current_user.profiles[0]
   end
 
   # GET /shows/new
