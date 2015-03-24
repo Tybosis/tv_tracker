@@ -55,21 +55,11 @@ Show.create(name: andre.name, air_time: andre.air_time, status: andre.status,
 profiles = Profile.create([
 
   {
-    name: 'Kevin',
-    email: 'kevin@example.com',
-    address: 'something',
-    city: 'seattle',
-    state: 'wa',
-    zip: 98155
+    name: 'Kevin'
   },
 
   {
-    name: 'Tyler',
-    email: 'tyler@example.com',
-    address: 'something',
-    city: 'seattle',
-    state: 'wa',
-    zip: 98122
+    name: 'Tyler'
   }
   ])
 
