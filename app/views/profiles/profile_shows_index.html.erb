@@ -1,1 +1,25 @@
-This totally worked!!!!
+<h1>Your Shows are Coming!</h1>
+
+<div id="Calendar-container">
+  <div class="container">
+    <div class="calendar-titles">
+      <% @profile.shows.each do |show| %>
+        <a href="<%= show_path show.id %>">
+          <%= show.names %>
+        </a>
+      <% end %>
+    </div>
+    <div id="calendar-slideshow">
+      <div class="day">
+        <div class="head">
+        </div>
+
+        <% @profile.shows.each do |show| %>
+          <div class="time">
+            <%= show.when_showing(today) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
