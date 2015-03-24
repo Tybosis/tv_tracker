@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resource :users
-  resources :shows
 
   devise_for :users
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
 
-  get 'users/:id/shows' => 'users#users_shows'
+  resources :profiles
+
+  get '/profiles/:profile_id/shows' => 'profiles#profile_shows_index'
+
+  resources :shows, only: [:index, :show]
+
   root 'static#index'
 
   # Example of regular route:
