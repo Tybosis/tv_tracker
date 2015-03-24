@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :profiles
 
-  get '/profiles/:profile_id/shows' => 'profiles#profile_shows_index'
+  get '/profiles/:profile_id/shows' => 'profiles#profile_shows_index', as: :profile_shows_index
 
   resources :shows, only: [:index, :show]
 
