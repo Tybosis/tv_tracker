@@ -1,0 +1,11 @@
+<p>Results</p>
+<ul>
+  <% @shows.each do |show| %>
+    <% if Show.exists?(:name => show["SeriesName"]) %>
+        <li><%= link_to show["SeriesName"], show_path(Show.where(:name => show["SeriesName"]).first.id) %></li>
+      <% else %>
+        <li><%= link_to show["SeriesName"], shows_path(series_id: show["seriesid"]), :method => :post %></li>
+      <% end %>
+    <li><%= show["Overview"] %></li>
+  <% end %>
+</ul>

@@ -74,7 +74,6 @@ shows = Show.create([
     poster: 'MyString'
   },
 
-
   {
     name: 'Elementary',
     air_time: '10pm',

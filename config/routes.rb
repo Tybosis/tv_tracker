@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-
   resources :profiles
 
   # put '/profiles/:profile_id/shows/:show_id' => 'profile#update', as: :add_profile_show
   get '/profiles/:profile_id/shows' => 'profiles#profile_shows_index', as: :profile_shows_index
 
-  resources :shows, only: [:index, :show]
+  get '/shows/search' => 'shows#search', :as => :show_search
+
+  resources :shows, only: [:index, :show, :create]
 
   get '/welcome' => 'welcome#index'
   root 'static#index'
