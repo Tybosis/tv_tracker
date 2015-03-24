@@ -246,6 +246,7 @@ DEPENDENCIES
   jquery-rails
   minitest-rails-capybara
   minitest-reporters
+  pry
   pundit
   rails (= 4.2.0)
   sass-rails (~> 5.0)

@@ -28,3 +28,9 @@
 </table>
 
 <br>
+
+    <%= form_tag show_search_path, :method => 'get' do %>
+      <%= text_field_tag :Search, params[:search] %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>

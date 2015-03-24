@@ -25,8 +25,7 @@ class ShowsController < ApplicationController
   # POST /shows
   # POST /shows.json
   def create
-    @show = Show.new(show_params)
-
+    @show = build_show
     respond_to do |format|
       if @show.save
         format.html { redirect_to @show, notice: 'Show was successfully created.' }
@@ -62,25 +61,34 @@ class ShowsController < ApplicationController
     end
   end
 
+  def search
+    tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
+    results = tvdb.search(params[:Search])
+    @shows = results.map { |show| show }
+  end
+
   # return the date if show is showing today else return nothing (false)
   def when_showing
     time = show.air_time
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_show
-      @show = Show.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def show_params
-      params.require(:show).permit(:name, :air_time, :status, :next_episode, :overview, :banner, :poster)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_show
+    @show = Show.find(params[:id])
+  end
 
-    def set_show_stats
-      tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
-      results = tvdb.search(@search)
-      show = tvdb.get_series_by_id(results[0]["seriesid"])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def show_params
+    params.require(:show).permit(:name, :air_time, :status, :next_episode, :overview, :banner, :poster)
+  end
+
+  def build_show
+    tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
+    show = tvdb.get_series_by_id(params[:series_id])
+    Show.new(name: show.name, air_time: show.air_time, status: show.status,
+             next_episode: show.episodes.last.air_date, banner: show.series_banners('en').first.url,
+             poster: show.posters('en').first.url)
+  end
 end

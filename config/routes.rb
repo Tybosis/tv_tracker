@@ -2,12 +2,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-
   resources :profiles
 
   get '/profiles/:profile_id/shows' => 'profiles#profile_shows_index', as: :profile_shows_index
 
-  resources :shows, only: [:index, :show]
+  get '/shows/search' => 'shows#search', :as => :show_search
+
+  resources :shows, only: [:index, :show, :create]
 
   get '/welcome' => 'welcome#index'
   root 'static#index'

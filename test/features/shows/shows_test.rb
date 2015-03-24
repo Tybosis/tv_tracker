@@ -4,7 +4,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
 
   # see my list of shows
   scenario "As a user I want to see my show list" do
-    sign_in(:superman)
+    sign_in
 
     visit profile_shows_index_path
 
@@ -16,7 +16,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
 
   # search for a show on the shows_show page
   scenario "As a user I want to be able to search for a show" do
-    sign_in(:superman)
+    sign_in
 
     visit "/shows"
 
@@ -33,7 +33,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
 
   # delete a show from my list because I don't like it anymore
   scenario "As a user I want to delete my show list" do
-    sign_in(:superman)
+    sign_in
 
     visit profile_shows_index_path
 
@@ -46,23 +46,31 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
 
   # scroll through a huge list of shows to keep track of
   scenario "As a user I want to view a list of shows to search through, clicking on one should take me to the show_show_page" do
-    sign_in(:superman)
+    sign_in
 
     visit shows_path
-    puts page.text
 
     #should now be on the show show page (lol)
     page.text.must_include "Elementary"
+
+    all('a').select { |link| link.text == "Show" }.first.click
+
+    page.text.must_include "Elementary"
+
     page.text.must_include "Add"
   end
 
   # add shows via the show_show_page
   scenario "As a user I want to add a show via the show_show_page" do
-    sign_in(:superman)
+    sign_in
 
     visit shows_path
 
-    click_on "Big Bang Theory"
+    page.text.must_include "Big Bang Theory"
+
+    all('a').select { |link| link.text == "Show" }.last.click
+
+    page.text.must_include "Big Bang Theory"
 
     click_on "Add"
 
@@ -71,7 +79,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
 
   # search should return a list of shows from tvdb
   scenario "Search should return multiple results" do
-    sign_in(:superman)
+    sign_in
 
     visit "/shows"
 
@@ -85,16 +93,18 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
   end
 
   scenario "Searched shows should show up in the show index page" do
-    sign_in(:superman)
+    sign_in
 
     visit "/shows"
 
     fill_in "Search", with: "The Simpsons"
 
+    click_on "Search"
+
     click_on "The Simpsons"
 
     visit "/shows"
 
-    page.text.must_include
+    page.text.must_include "The Simpsons"
   end
 end
