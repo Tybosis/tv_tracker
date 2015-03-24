@@ -45,12 +45,12 @@
 </ul>
 
 <ul>
-  <% results_5 = tvdb.search("Marvel's Daredevil") %>
-  <% daredevil = tvdb.get_series_by_id(results_5[0]["seriesid"]) %>
-  <li><img src="<%= daredevil.series_banners('en').first.url %>" ></li>
-  <li><%= daredevil.air_time %></li>
-  <li><%= daredevil.status %></li>
-  <li><%= daredevil.episodes.map{ |x| x.air_date } %></li>
-  <li><%= daredevil.overview %></li>
-  <li><img class="poster" src="<%= daredevil.posters('en').last.url %>" > </li>
+  <% results_5 = tvdb.search("True Blood") %>
+  <% blood = tvdb.get_series_by_id(results_5[0]["seriesid"]) %>
+  <li><img src="<%= blood.series_banners('en').first.url %>" ></li>
+  <li><%= blood.air_time %></li>
+  <li><%= blood.status %></li>
+  <li><%= blood.episodes.map{ |x| x.air_date } %></li>
+  <li><%= blood.overview %></li>
+  <li><img class="poster" src="<%= blood.posters('en').last.url %>" > </li>
 </ul>
