@@ -65,7 +65,7 @@ class ShowsController < ApplicationController
   def search
     tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
     results = tvdb.search(params[:Search])
-    @shows = results.map { |show| show }
+    @shows = results.reject { |show| show["SeriesName"] == "** 403: Series Not Permitted **" }.map { |show| show }
   end
 
   # return the date if show is showing today else return nothing (false)
@@ -89,7 +89,8 @@ class ShowsController < ApplicationController
     tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
     show = tvdb.get_series_by_id(params[:series_id])
     Show.new(name: show.name, air_time: show.air_time, status: show.status,
-             next_episode: show.episodes.last.air_date, banner: show.series_banners('en').first.url,
+             next_episode: show.episodes.last.air_date,
+             banner: show.series_banners('en').first.url,
              poster: show.posters('en').first.url)
   end
 end
