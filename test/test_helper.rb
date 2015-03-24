@@ -15,10 +15,9 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  def sign_in(role = :user)
+  def sign_in(user)
     visit new_user_session_path
-
-    fill_in "Email", with: User(role).email
-    fill_in "Password", with: "Password"
+    fill_in "Email", with: users(user).email
+    fill_in "Password", with: '1234fake'
   end
 end

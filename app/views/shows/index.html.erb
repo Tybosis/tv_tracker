@@ -20,12 +20,7 @@
     <% @shows.each do |show| %>
       <tr>
         <td><%= show.name %></td>
-        <td><%= show.air_time %></td>
-        <td><%= show.status %></td>
-        <td><%= show.next_episode %></td>
-        <td><%= show.overview %></td>
-        <td><%= show.banner %></td>
-        <td><%= show.poster %></td>
+        <td><img src="<%= show.banner %>"></td>
         <td><%= link_to 'Show', show %></td>
       </tr>
     <% end %>
