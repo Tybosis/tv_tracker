@@ -5,30 +5,19 @@
   <%= @profile.name %>
 </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @profile.email %>
-</p>
+<h2>Show List</h2>
 
-<p>
-  <strong>Address:</strong>
-  <%= @profile.address %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @profile.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @profile.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @profile.zip %>
-</p>
+<div class="profile-show-list">
+<% @profile.shows.each do |show| %>
+  <div class="profile-show">
+    <h3><%= show.name %></h3>
+  </div>
+<% end %>
+  <div class="profile-show">
+    <%= link_to 'Add Show', shows_path %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
