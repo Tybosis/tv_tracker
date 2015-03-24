@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
 #### Game of Thrones
 results_1 = tvdb.search('game of thrones')
