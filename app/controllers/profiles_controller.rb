@@ -1,14 +1,17 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def profile_shows_index
     @profile = Profile.find(params[:profile_id])
+
+    show = @profile.shows.build
   end
 
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = policy_scope(Profile)
   end
 
   # GET /profiles/1
