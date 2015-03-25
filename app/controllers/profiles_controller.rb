@@ -3,8 +3,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def profile_shows_index
-    @profile = Profile.find(params[:profile_id])
-    show = @profile.shows.build
+    @profile = Profile.find(session[:profile_id])
   end
 
   # GET /profiles
@@ -16,6 +15,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @profile = Profile.find(session[:profile_id])
   end
 
   # GET /profiles/new
@@ -71,7 +71,7 @@ class ProfilesController < ApplicationController
 
   def select_profile
     session[:profile_id] = params[:profile_id]
-    redirect_to profile_shows_index_path
+    redirect_to profile_shows_path
   end
 
   def remove_show_from_profile

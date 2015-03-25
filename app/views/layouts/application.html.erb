@@ -14,17 +14,7 @@
   <% end %>
 
   <header>
-    <%= link_to "Browse", shows_path %>
-    <%= link_to "Profiles", profiles_path %>
-    <nav class="sign_in_nav">
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <% if user_signed_in? %>
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        <%= link_to "Preferences", edit_user_registration_path %>
-      <% else %>
-        <%= link_to "Sign In", new_user_session_path %>
-      <% end %>
-    </nav>
+    <%= render 'layouts/header' %>
   </header>
 
 <%= yield %>

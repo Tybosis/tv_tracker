@@ -3,8 +3,9 @@
 <div id="Calendar-container">
   <div class="container">
     <div class="calendar-titles">
+      <%= @profile.name %>
       <% @profile.shows.each do |show| %>
-        <a href="<%= show_path show.id %>">
+        <a href="">
           <%= show.name %>
         </a>
       <% end %>
