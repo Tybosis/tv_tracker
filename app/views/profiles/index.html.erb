@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Profiles</h1>
+<h1>Choose Profiles</h1>
 
 <table>
   <thead>
@@ -14,6 +14,7 @@
     <% @profiles.each do |profile| %>
       <tr>
         <td><%= profile.name %></td>
+        <td><%= link_to 'Use', select_profile_path(profile) %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
