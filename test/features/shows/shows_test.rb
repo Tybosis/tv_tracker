@@ -7,7 +7,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
     sign_in
     add_show
     visit profile_path(users(:superman).profiles.first.id)
-    page.text.must_include "Elementary"
+    page.text.must_include "Big Bang Theory"
   end
 
 
@@ -26,25 +26,29 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
   scenario "As a user I want to delete my show list" do
     sign_in
     add_show
+    visit "/shows"
+    all('a').select { |link| link.text == "Show" }.first.click
+    click_on 'Add'
     visit profile_path(users(:superman).profiles.first.id)
-    page.text.must_include "Elementary"
+    page.text.must_include "Big Bang Theory"
     all('a').select { |link| link.text == "Remove Show" }.first.click
-    page.text.wont_include "Elementary"
+    page.text.wont_include "Big Bang Theory"
   end
 
   # scroll through a huge list of shows to keep track of
   scenario "As a user I want to view a list of shows to search through, clicking on one should take me to the show_show_page" do
     sign_in
+    add_show
     visit shows_path
-    page.text.must_include "Elementary"
     all('a').select { |link| link.text == "Show" }.first.click
-    page.text.must_include "Elementary"
+    page.text.must_include "Big Bang Theory"
     page.html.must_include "Add"
   end
 
   # add shows via the show_show_page
   scenario "As a user I want to add a show via the show_show_page" do
     sign_in
+    add_show
     visit shows_path
     page.text.must_include "Big Bang Theory"
     all('a').select { |link| link.text == "Show" }.last.click

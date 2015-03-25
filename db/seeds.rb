@@ -27,30 +27,46 @@ futurama = tvdb.get_series_by_id(results_4[0]["seriesid"])
 results_5 = tvdb.search('the eric andre show')
 andre = tvdb.get_series_by_id(results_5[0]["seriesid"])
 
+results_6 = tvdb.search('big bang theory')
+bang = tvdb.get_series_by_id(results_6[0]["seriesid"])
+
+results_7 = tvdb.search('elementary')
+elem = tvdb.get_series_by_id(results_7[0]["seriesid"])
+
 Show.create(name: got.name, air_time: got.air_time, status: got.status,
-            next_episode: got.episodes.last.air_date, overview: got.overview,
+            episodes: got.episodes, overview: got.overview,
             banner: got.series_banners('en').first.url,
             poster: got.posters('en').first.url)
 
 Show.create(name: broad.name, air_time: broad.air_time, status: broad.status,
-            next_episode: broad.episodes.last.air_date, overview: broad.overview,
+            episodes: broad.episodes, overview: broad.overview,
             banner: broad.series_banners('en').first.url,
             poster: broad.posters('en').first.url)
 
 Show.create(name: gotham.name, air_time: gotham.air_time, status: gotham.status,
-            next_episode: gotham.episodes.last.air_date, overview: gotham.overview,
+            episodes: gotham.episodes, overview: gotham.overview,
             banner: gotham.series_banners('en').first.url,
             poster: gotham.posters('en').first.url)
 
 Show.create(name: futurama.name, air_time: futurama.air_time, status: futurama.status,
-            next_episode: futurama.episodes.last.air_date, overview: futurama.overview,
+            episodes: futurama.episodes, overview: futurama.overview,
             banner: futurama.series_banners('en').first.url,
             poster: futurama.posters('en').first.url)
 
 Show.create(name: andre.name, air_time: andre.air_time, status: andre.status,
-            next_episode: andre.episodes.last.air_date, overview: andre.overview,
+            episodes: andre.episodes, overview: andre.overview,
             banner: andre.series_banners('en').first.url,
             poster: andre.posters('en').first.url)
+
+Show.create(name: bang.name, air_time: bang.air_time, status: bang.status,
+            episodes: bang.episodes, overview: bang.overview,
+            banner: bang.series_banners('en').first.url,
+            poster: bang.posters('en').first.url)
+
+Show.create(name: elem.name, air_time: elem.air_time, status: elem.status,
+            episodes: elem.episodes, overview: elem.overview,
+            banner: elem.series_banners('en').first.url,
+            poster: elem.posters('en').first.url)
 
 profiles = Profile.create([
 
@@ -60,27 +76,5 @@ profiles = Profile.create([
 
   {
     name: 'Tyler'
-  }
-  ])
-
-shows = Show.create([
-  {
-    name: "Big Bang Theory",
-    air_time: '9pm',
-    status: 'Continuing',
-    next_episode: "2015-4-12",
-    overview: "Follow the lives of nerds in this comedy",
-    banner: 'MyString',
-    poster: 'MyString'
-  },
-
-  {
-    name: 'Elementary',
-    air_time: '10pm',
-    status: 'Continuing',
-    next_episode: "2015-4-12",
-    overview: "Modern day Sherlock in New York with Joan Watson",
-    banner: 'MyString',
-    poster: 'MyString'
   }
   ])

@@ -31,7 +31,9 @@ class ActiveSupport::TestCase
 
   def add_show
     visit "/shows"
-    all('a').select { |link| link.text == "Show" }.first.click
-    click_on 'Add'
+    fill_in("Search", with: "big bang theory")
+    click_on "Search"
+    click_on "Big Bang Theory"
+    click_on "Add"
   end
 end

@@ -85,21 +85,9 @@ class ShowsController < ApplicationController
     tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
     show = tvdb.get_series_by_id(params[:series_id])
     Show.new(name: show.name, air_time: show.air_time, status: show.status,
-             next_episode: current_next_episode(show),
+             episodes: show.episodes.last(20),
              banner: show.series_banners('en').first.url,
              poster: show.posters('en').first.url,
              overview: show.overview)
-  end
-
-  def current_next_episode(show)
-    if show.episodes.empty?
-      return "N/A"
-    else
-      show.episodes.each do |episode|
-        if !episode.air_date.nil? && episode.air_date >= Date.today
-          return episode.air_date
-        end
-      end
-    end
   end
 end
