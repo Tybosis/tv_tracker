@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'tvdb_party'
 gem 'devise'
 gem 'pundit'
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development, :test do
   gem 'byebug'
