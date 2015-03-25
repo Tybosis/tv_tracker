@@ -1,20 +1,2 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-bbt:
-  name: "Big Bang Theory"
-  air_time: 9pm
-  status: Continuing
-  next_episode: "2015-4-12"
-  overview: "Follow the lives of nerds in this comedy"
-  banner: MyString
-  poster: MyString
-
-elem:
-  name: Elementary
-  air_time: 10pm
-  status: Continuing
-  next_episode: "2015-4-12"
-  overview: "Modern day Sherlock in New York with Joan Watson"
-  banner: MyString
-  poster: MyString
