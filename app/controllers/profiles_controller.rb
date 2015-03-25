@@ -16,7 +16,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-
   end
 
   # GET /profiles/new
@@ -67,6 +66,13 @@ class ProfilesController < ApplicationController
       format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def remove_show_from_profile
+    @profile = Profile.find(params[:profile_id]) #can do that in before_filter
+    show = Show.find(params[:format])
+    @profile.shows.delete show
+    redirect_to @profile
   end
 
   private

@@ -12,6 +12,8 @@
 <% @profile.shows.each do |show| %>
   <div class="profile-show">
     <h3><%= show.name %></h3>
+    <p><%= link_to 'Remove Show', profile_remove_show_from_profile_path(@profile, show), :method => :delete %></p>
+
   </div>
 <% end %>
   <div class="profile-show">

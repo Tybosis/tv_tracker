@@ -3,16 +3,6 @@
 
 kevin:
   name: Kevin
-  email: kevin@example.com
-  address: something
-  city: seattle
-  state: wa
-  zip: 98155
 
 tyler:
   name: Tyler
-  email: tyler@example.com
-  address: something
-  city: seattle
-  state: wa
-  zip: 98122
