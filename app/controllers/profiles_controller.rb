@@ -4,7 +4,6 @@ class ProfilesController < ApplicationController
 
   def profile_shows_index
     @profile = Profile.find(params[:profile_id])
-
     show = @profile.shows.build
   end
 
@@ -17,7 +16,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-
   end
 
   # GET /profiles/new
@@ -70,6 +68,13 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def remove_show_from_profile
+    @profile = Profile.find(params[:profile_id]) #can do that in before_filter
+    show = Show.find(params[:format])
+    @profile.shows.delete show
+    redirect_to @profile
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
@@ -78,7 +83,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params[:profile][:show_ids] = params[:profile][:show_ids].split
+      params[:profile][:show_ids] = params[:profile][:show_ids].split if params[:profile][:show_ids]
       params.require(:profile).permit(:name, show_ids: [])
     end
 end

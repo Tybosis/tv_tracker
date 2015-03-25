@@ -5,7 +5,7 @@ Lint/UnusedBlockArgument:
 
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
-  Max: 112
+  Max: 120
 
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/ClassAndModuleChildren:
