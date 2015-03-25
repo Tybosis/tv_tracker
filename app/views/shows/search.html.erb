@@ -1,5 +1,9 @@
 <p>Results</p>
 <ul>
+  <% if @shows.empty? %>
+    <h1>No Search Results. Please try again.</h1>
+  <% end %>
+
   <% @shows.each do |show| %>
     <% if Show.exists?(:name => show["SeriesName"]) %>
         <li><%= link_to show["SeriesName"], show_path(Show.where(:name => show["SeriesName"]).first.id) %></li>
@@ -9,3 +13,5 @@
     <li><%= show["Overview"] %></li>
   <% end %>
 </ul>
+
+<%= link_to "Back", shows_path %>

@@ -1,3 +1,5 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
@@ -21,5 +23,15 @@ class ActiveSupport::TestCase
     fill_in("Email", with: "clark@dailyplanet.com")
     fill_in("Password", with: "1234fake")
     click_on "Log in"
+    visit "/profiles"
+    click_on "New Profile"
+    fill_in("Name", with: "Superman")
+    click_on "Create Profile"
+  end
+
+  def add_show
+    visit "/shows"
+    all('a').select { |link| link.text == "Show" }.first.click
+    click_on 'Add'
   end
 end

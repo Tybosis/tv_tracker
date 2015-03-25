@@ -4,7 +4,6 @@ class ProfilesController < ApplicationController
 
   def profile_shows_index
     @profile = Profile.find(params[:profile_id])
-
     show = @profile.shows.build
   end
 
@@ -17,7 +16,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-
   end
 
   # GET /profiles/new
@@ -70,9 +68,18 @@ class ProfilesController < ApplicationController
     end
   end
 
+
   def select_profile
     session[:profile_id] = params[:profile_id]
     redirect_to profile_shows_index_path
+  end
+
+  def remove_show_from_profile
+    @profile = Profile.find(params[:profile_id]) #can do that in before_filter
+    show = Show.find(params[:format])
+    @profile.shows.delete show
+    redirect_to @profile
+
   end
 
   private
