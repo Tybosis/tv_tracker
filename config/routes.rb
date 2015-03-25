@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :profiles
 
+  get 'select_profile/:profile_id' => 'profiles#select_profile', as: :select_profile
   # put '/profiles/:profile_id/shows/:show_id' => 'profile#update', as: :add_profile_show
   get '/profiles/:profile_id/shows' => 'profiles#profile_shows_index', as: :profile_shows_index
 

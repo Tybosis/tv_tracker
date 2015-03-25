@@ -70,6 +70,11 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def select_profile
+    session[:profile_id] = params[:profile_id]
+    redirect_to profile_shows_index_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
@@ -78,7 +83,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params[:profile][:show_ids] = params[:profile][:show_ids].split
+      params[:profile][:show_ids] = params[:profile][:show_ids].split if params[:profile][:show_ids]
       params.require(:profile).permit(:name, show_ids: [])
     end
 end

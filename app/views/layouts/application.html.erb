@@ -14,6 +14,8 @@
   <% end %>
 
   <header>
+    <%= link_to "Browse", shows_path %>
+    <%= link_to "Profiles", profiles_path %>
     <nav class="sign_in_nav">
       <%= link_to "Sign Up", new_user_registration_path %>
       <% if user_signed_in? %>
