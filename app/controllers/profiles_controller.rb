@@ -1,9 +1,11 @@
 class ProfilesController < ApplicationController
+  skip_before_action :current_profile
   before_action :authenticate_user!
+  before_action :set_current_profile, only: [:index, :show]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-  def profile_shows_index
-    @profile = Profile.find(session[:profile_id])
+  def profile_shows
+    @profile = Profile.find(params[:profile_id])
   end
 
   # GET /profiles
@@ -15,7 +17,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    @profile = Profile.find(session[:profile_id])
+    @profile = Profile.find(params[:id])
   end
 
   # GET /profiles/new
@@ -32,6 +34,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
+    session[:profile_id] = @profile.id
 
     respond_to do |format|
       if @profile.save
@@ -62,16 +65,16 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1.json
   def destroy
     @profile.destroy
+    session[:profile_id] = nil
     respond_to do |format|
       format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
-
   def select_profile
     session[:profile_id] = params[:profile_id]
-    redirect_to profile_shows_path
+    redirect_to profile_shows_path session[:profile_id]
   end
 
   def remove_show_from_profile
@@ -80,6 +83,14 @@ class ProfilesController < ApplicationController
     @profile.shows.delete show
     redirect_to @profile
 
+  end
+
+  def set_current_profile
+    begin
+      @current_profile ||= Profile.find(session[:profile_id])
+    rescue ActiveRecord::RecordNotFound
+      @current_profile = nil
+    end
   end
 
   private

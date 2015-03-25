@@ -14,7 +14,11 @@
   <% end %>
 
   <header>
-    <%= render 'layouts/header' %>
+    <% if @current_profile %>
+      <%= render 'layouts/header' %>
+    <% end %>
+
+    <%= render 'layouts/sign_in' %>
   </header>
 
 <%= yield %>
