@@ -14,14 +14,21 @@
   <% end %>
 
   <header>
-    <% if @current_profile %>
-      <%= render 'layouts/header' %>
-    <% end %>
-
+    <div class="left-side"> 
+      <%= link_to root_path, :class => 'logo-container' do %>
+        <%= image_tag 'logo.png', :class => 'logo' %>
+      <% end %>
+        
+      <% if @current_profile %>
+        <%= render 'layouts/header' %>
+      <% end %>
+    </div>
     <%= render 'layouts/sign_in' %>
   </header>
 
+
 <%= yield %>
+
 
 </body>
 </html>
