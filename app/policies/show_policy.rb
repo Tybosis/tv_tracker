@@ -10,8 +10,7 @@ class ShowPolicy
     end
 
     def resolve
-      scope.where :profile_id => @profile.id
+      scope.where profile_id: @profile.id
     end
   end
 end
-

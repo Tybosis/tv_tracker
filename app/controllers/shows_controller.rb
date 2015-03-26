@@ -6,12 +6,12 @@ class ShowsController < ApplicationController
   # GET /shows
   # GET /shows.json
   def index
-    if params[:profile_id] #if profile
+    if params[:profile_id] # if profile
       @shows = ShowPolicy::Scope.new(current_profile, Show).resolve
       @profile = current_profile
-      render '/profiles/profile_shows_index' #goto Profile/shows (calendar)
+      render '/profiles/profile_shows_index' # goto Profile/shows (calendar)
     else
-      @shows = Show.all #go to all shows
+      @shows = Show.all # go to all shows
     end
   end
 

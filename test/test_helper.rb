@@ -23,6 +23,9 @@ class ActiveSupport::TestCase
     fill_in("Email", with: "clark@dailyplanet.com")
     fill_in("Password", with: "1234fake")
     click_on "Log in"
+  end
+
+  def create_profile
     visit "/profiles"
     click_on "New Profile"
     fill_in("Name", with: "Superman")

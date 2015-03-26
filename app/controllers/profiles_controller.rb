@@ -82,7 +82,6 @@ class ProfilesController < ApplicationController
     show = Show.find(params[:format])
     @profile.shows.delete show
     redirect_to @profile
-
   end
 
   def set_current_profile
@@ -94,14 +93,15 @@ class ProfilesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @profile = Profile.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def profile_params
-      params[:profile][:show_ids] = params[:profile][:show_ids].split if params[:profile][:show_ids]
-      params.require(:profile).permit(:name, show_ids: [])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def profile_params
+    params[:profile][:show_ids] = params[:profile][:show_ids].split if params[:profile][:show_ids]
+    params.require(:profile).permit(:name, show_ids: [])
+  end
 end
