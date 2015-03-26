@@ -1,28 +1,24 @@
+<h2>Show List</h2>
+
 <p>
-  <strong>Name:</strong>
+  <strong>Profile:</strong>
   <%= @profile.name %>
 </p>
 
-<h2>Show List</h2>
-
-
-<div class="profile-show-list">
+<div class="profile_show_list clearfix">
 <% @profile.shows.each do |show| %>
-  <div class="profile-show">
-    <h3><%= show.name %></h3>
-    <p><%= link_to 'Remove Show', profile_remove_show_from_profile_path(@profile, show), :method => :delete %></p>
+  <div class="profile_show">
+    <%= image_tag show.poster %>
+    <strong>
+    <%= link_to 'Remove Show', profile_remove_show_from_profile_path(@profile, show), :method => :delete %>
+    <strong>
 
   </div>
 <% end %>
-  <div class="profile-show">
-    <%= link_to 'Add Show', shows_path %>
-  </div>
 </div>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<div class="clear">&nbsp;</div>
+<%= link_to 'Add Show', shows_path, :class => 'button' %>
+<%= link_to 'Edit Profile', edit_profile_path(@profile), :class => 'button' %>
 
-<%= form_tag show_search_path, :method => 'get' do %>
-  <%= text_field_tag :Search, params[:search] %>
-  <%= submit_tag "Search" %>
-<% end %>
+

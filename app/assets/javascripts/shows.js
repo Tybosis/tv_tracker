@@ -1,7 +1,6 @@
 show_width = 150;
 show_margin = 20;
 
-
 $(document).ready(function(){
   $('.shows_mover').each(function(){
     shows_count = $(this).children('.show').length
@@ -37,3 +36,5 @@ function slide_right(mover){
 
   $(mover).css('left', left - (show_width + show_margin) + "px");
 }
+
+

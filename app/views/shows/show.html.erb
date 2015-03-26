@@ -1,36 +1,35 @@
 
-<div class="container">
-  <h2>
-    <%= @show.name %>
-  </h2>
+<h2>
+  <%= @show.name %>
+</h2>
 
-  <img src="<%= @show.poster %>" class="show_poster img_left">
+<img src="<%= @show.poster %>" class="show_poster img_left">
 
+<p>
+  <strong>Status:</strong>
+  <%= @show.status %>
+</p>
+
+<% if @show.air_time %>
   <p>
-    <strong>Status:</strong>
-    <%= @show.status %>
+    <strong>Air time:</strong>
+    <%= @show.air_time %>
   </p>
-
-  <% if @show.air_time %>
-    <p>
-      <strong>Air time:</strong>
-      <%= @show.air_time %>
-    </p>
-    <p>
-      <strong>Next episode:</strong>
-      <%= @show.current_next_episode(@show.episodes) %>
-    </p>
-  <% end %>
-
   <p>
-    <strong>Overview:</strong>
-    <%= @show.overview %>
+    <strong>Next episode:</strong>
+    <%= @show.current_next_episode(@show.episodes) %>
   </p>
+<% end %>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @show.overview %>
+</p>
 
 
-  <%= form_for @profile do |f| %>
-    <%= f.hidden_field :show_ids, value: @profile.show_ids << @show.id %>
-    <%= f.submit "Add show to my profile" %>
-  <% end %>
+<%= form_for @profile do |f| %>
+  <%= f.hidden_field :show_ids, value: @profile.show_ids << @show.id %>
+  <%= f.submit "Add show to my profile" %>
+<% end %>
 
 <div class='clear'>

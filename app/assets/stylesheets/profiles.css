@@ -1,0 +1,34 @@
+.profile{
+  width:100%;
+  max-width:130px;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align:center;
+  float:left;
+  margin-right:20px;
+}
+
+/*.profile a:hover{
+  background:none;
+}*/
+
+.profile .name{
+  font-size:1.2em;
+}
+
+.profile-pic {
+  width:100%;
+  max-width:110px;
+  float:left;
+  margin-right:15px;
+  padding:2px;
+}
+
+.profile-pic:hover,
+.profile-pic.selected{
+  border:solid 2px rgb(251, 74, 32);
+}
+
+.profile img,
+.profile-pic img{
+  background: rgb(71, 156, 215);
+}

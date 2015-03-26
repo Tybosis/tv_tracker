@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   skip_before_action :current_profile
   before_action :authenticate_user!
-  before_action :set_current_profile, only: [:index, :show]
+  before_action :set_current_profile, only: [:index, :show, :edit]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def profile_shows
@@ -102,6 +102,6 @@ class ProfilesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def profile_params
     params[:profile][:show_ids] = params[:profile][:show_ids].split if params[:profile][:show_ids]
-    params.require(:profile).permit(:name, show_ids: [])
+    params.require(:profile).permit(:name, :image_url, show_ids: [])
   end
 end
