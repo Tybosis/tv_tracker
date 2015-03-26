@@ -2,7 +2,6 @@ class ShowsController < ApplicationController
   require 'date'
   before_action :set_show, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
   # GET /shows
   # GET /shows.json
   def index
@@ -70,8 +69,7 @@ class ShowsController < ApplicationController
   end
 
   def search
-    tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
-    results = tvdb.search(params[:Search])
+    results = TVDB.search(params[:Search])
     @shows = results.reject { |show| show["SeriesName"] == "** 403: Series Not Permitted **" }.map { |show| show }
   end
 
@@ -88,8 +86,7 @@ class ShowsController < ApplicationController
   end
 
   def build_show
-    tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
-    show = tvdb.get_series_by_id(params[:series_id])
+    show = TVDB.get_series_by_id(params[:series_id])
     Show.new(name: show.name, air_time: show.air_time, status: show.status,
              episodes: show.episodes.last(20),
              banner: show.series_banners('en').first.url,

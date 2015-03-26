@@ -29,8 +29,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
   scenario "As a user I want to delete my show list" do
     add_show
     visit "/shows"
-    all('a').select { |link| link.text == "Show" }.first.click
-    click_on 'Add'
+    click_on "Add to profile"
     click_on "My Shows"
     page.text.must_include "Big Bang Theory"
     all('a').select { |link| link.text == "Remove Show" }.first.click
@@ -41,19 +40,16 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
   scenario "As a user I want to browse through shows, clicking on one should take me to the show_show_page" do
     add_show
     visit shows_path
-    all('a').select { |link| link.text == "Show" }.first.click
+    click_on "Add to profile"
     page.text.must_include "Big Bang Theory"
-    page.html.must_include "Add"
   end
 
   # add shows via the show_show_page
   scenario "As a user I want to add a show via the show_show_page" do
     add_show
     visit shows_path
-    page.text.must_include "Big Bang Theory"
-    all('a').select { |link| link.text == "Show" }.last.click
-    page.text.must_include "Big Bang Theory"
-    click_on "Add"
+    page.html.must_include "http://thetvdb.com/banners/posters/80379-18.jpg"
+    click_on "Add to profile"
     page.text.must_include "Big Bang Theory"
   end
 
@@ -73,7 +69,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
     click_on "Search"
     click_on "The Simpsons"
     visit "/shows"
-    page.text.must_include "The Simpsons"
+    page.html.must_include "http://thetvdb.com/banners/posters/71663-10.jpg"
   end
 
   scenario "A bad search will return a 'No shows found' message " do
