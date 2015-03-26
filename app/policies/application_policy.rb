@@ -11,7 +11,7 @@ class ApplicationPolicy
   end
 
   def show?
-    scope.where(:id => record.id).exists?
+    scope.where(id: record.id).exists?
   end
 
   def create?
@@ -55,12 +55,9 @@ class ApplicationPolicy
     end
   end
 
-  private
-
-    class NullUser
-      def admin?
-        false
-      end
+  class NullUser
+    def admin?
+      false
     end
+  end
 end
-

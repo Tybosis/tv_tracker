@@ -1,6 +1,6 @@
 class CreateProfilesShows < ActiveRecord::Migration
   def change
-    create_table :profiles_shows, :id => false do |t|
+    create_table :profiles_shows, id: false do |t|
       t.references :profile, :show
     end
 
