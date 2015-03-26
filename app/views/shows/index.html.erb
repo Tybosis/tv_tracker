@@ -1,25 +1,28 @@
+<div class="container">
 <h1>Listing Shows</h1>
 
-<table>
 
-  <tbody>
-    <% @shows.each do |show| %>
-      <tr>
-        <td><img src="<%= show.poster %>"></td>
-        <%= form_for @profile do |f| %>
-          <%= f.hidden_field :show_ids, value: @profile.show_ids << show.id %>
-          <%= f.submit "Add show to my profile" %>
-        <% end %>
-        <td><%= link_to 'Show', show %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-    <%= form_tag show_search_path, :method => 'get' do %>
-      <%= text_field_tag :Search, params[:search] %>
-      <%= submit_tag "Search" %>
-    <% end %>
+<div class="show_slider clearfix ">  
+  <div class="slideshow_nav">
+    <div class="show_slider_left">&nbsp;</div>
+    <div class="show_slider_right">&nbsp;</div>
   </div>
+
+  <div class="shows_container">
+    <div class="shows_mover">
+      <% @shows.each do |show| %>
+        <div class="show">
+          <%= link_to show do %>
+          <img src="<%= show.poster %>">
+          <% end %>
+          <%= form_for @profile do |f| %>
+            <%= f.hidden_field :show_ids, value: @profile.show_ids << show.id %>
+            <%= f.submit "Add to profile", :class => "center" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+</div>

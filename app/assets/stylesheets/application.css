@@ -17,7 +17,9 @@
  *= require scaffolds
  *= require shows
  */
-
+img{
+  width:100%;
+}
 
 .xs-text-left{
   text-align:left;
