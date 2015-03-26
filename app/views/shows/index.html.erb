@@ -1,19 +1,15 @@
 <h1>Listing Shows</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Banner</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
   <tbody>
     <% @shows.each do |show| %>
       <tr>
-        <td><%= show.name %></td>
-        <td><img src="<%= show.banner %>"></td>
+        <td><img src="<%= show.poster %>"></td>
+        <%= form_for @profile do |f| %>
+          <%= f.hidden_field :show_ids, value: @profile.show_ids << show.id %>
+          <%= f.submit "Add show to my profile" %>
+        <% end %>
         <td><%= link_to 'Show', show %></td>
       </tr>
     <% end %>
