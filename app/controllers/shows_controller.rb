@@ -2,7 +2,6 @@ class ShowsController < ApplicationController
   require 'date'
   before_action :set_show, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  TVDB = TvdbParty::Search.new("A42FACB54E7022B1")
   # GET /shows
   # GET /shows.json
   def index
