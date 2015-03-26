@@ -21,6 +21,22 @@ img{
   width:100%;
 }
 
+.img_left{
+  float:left;
+  margin-right:20px;
+  margin-bottom:25px;
+}
+
+.img_right{
+  float:right;
+  margin-left:20px;
+  margin-bottom:25px;
+}
+
+.clear{
+  clear:both;
+}
+
 .xs-text-left{
   text-align:left;
 }
