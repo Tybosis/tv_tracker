@@ -16,9 +16,26 @@
  *= require profiles
  *= require scaffolds
  *= require shows
+ *= require profiles
  */
 img{
   width:100%;
+}
+
+.img_left{
+  float:left;
+  margin-right:20px;
+  margin-bottom:25px;
+}
+
+.img_right{
+  float:right;
+  margin-left:20px;
+  margin-bottom:25px;
+}
+
+.clear{
+  clear:both;
 }
 
 .xs-text-left{
@@ -104,15 +121,32 @@ img{
   display:block;
 }
 
-/*
-.third{
-  width:32.5%;
+.rounded{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.box-container{
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #1498E3;
   display:inline-block;
-}*/
+  padding:15px;
+  float:left;
+  margin-right:20px;
+}
 
 .poster {
   width: 350px;
   height: auto;
+}
+
+.body.container{
+  background:#F0EBEB;
+  background: rgba(240, 235, 235, .85);
+  min-height:1200px;
 }
 
 header{
@@ -223,6 +257,14 @@ header .search_bar input[type=text]{
   margin-left:-1000px;
 }
 
+.banner.banner-home{
+  overflow:visible;
+}
+
+.banner.banner-home img{
+  width:auto;
+}
+
 #example_callouts{
   width:100%;
   background:#48A8D0;
@@ -250,9 +292,9 @@ header .search_bar input[type=text]{
   -moz-border-radius: 10px;
   border-radius: 10px;
 
-  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow:    3px 3px 3px 0px rgba(0, 0, 0, 0.4);
-  box-shadow:         3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow:    2px 2px 2px 0px rgba(0, 0, 0, 0.4);
+  box-shadow:         2px 2px 2px 0px rgba(0, 0, 0, 0.4);
 
   background: #1895D3; /* Old browsers */
   background: -moz-linear-gradient(top, #1895D3 0%, #0E5D8A 100%); /* FF3.6+ */
@@ -278,20 +320,24 @@ header .search_bar input[type=text]{
 
 
 a.button{
-  display:block;
-  max-width:250px;
+  display:inline-block;
+  max-width:150px;
   color:white!important;
   text-decoration:none!important;
   text-align:center;
-  font-size:22px;
-  padding:30px 30px;
+  padding:8px 12px;
 }
 
 
 
 a.customize{
+  display:block;
   margin:20px auto;
+  max-width:250px;
   font-size:22px;
   padding:30px 30px;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow:    3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+  box-shadow:         3px 3px 3px 0px rgba(0, 0, 0, 0.4);
 }
 

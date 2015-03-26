@@ -21,9 +21,9 @@ $(document).ready(function(){
 function slide_left(mover){
   left = parseInt( $(mover).css('left') );
   if (Math.abs(left) < show_width)
-    return false;
-
-  $(mover).css('left', left + (show_width + show_margin) + "px");
+    $(mover).css('left', 0);
+  else
+    $(mover).css('left', left + (show_width + show_margin) + "px");
 }
 
 function slide_right(mover){
@@ -36,3 +36,5 @@ function slide_right(mover){
 
   $(mover).css('left', left - (show_width + show_margin) + "px");
 }
+
+

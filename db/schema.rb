@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325200213) do
+ActiveRecord::Schema.define(version: 20150326205543) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "image_url"
   end
 
   create_table "profiles_shows", id: false, force: :cascade do |t|
@@ -25,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150325200213) do
     t.integer "show_id"
   end
 
-  add_index "profiles_shows", %w("profile_id", "show_id"), name: "index_profiles_shows_on_profile_id_and_show_id"
+  add_index "profiles_shows", ["profile_id", "show_id"], name: "index_profiles_shows_on_profile_id_and_show_id"
 
   create_table "shows", force: :cascade do |t|
     t.string   "name"
