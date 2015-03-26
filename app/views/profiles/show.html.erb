@@ -21,3 +21,8 @@
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
+
+<%= form_tag show_search_path, :method => 'get' do %>
+  <%= text_field_tag :Search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>

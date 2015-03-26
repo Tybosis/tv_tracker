@@ -3,6 +3,10 @@
   <%= link_to "My Shows", profile_path(@current_profile) %>
   <%= link_to "Calendar", profile_shows_path(@current_profile) %>
   <%= link_to "Profiles", profiles_path %>
+  <%= form_tag show_search_path, :method => 'get' do %>
+    <%= text_field_tag :Search, params[:search] %>
+    <%= submit_tag "Search" %>
+  <% end %>
 </div>
 
-    
+
