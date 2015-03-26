@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
       @shows = ShowPolicy::Scope.new(current_profile, Show).resolve
       render '/profiles/profile_shows_index' #goto Profile/shows (calendar)
     else
-      @shows = Show.all #go to all shows
+      @shows = Show.all # go to all shows
     end
   end
 

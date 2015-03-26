@@ -68,13 +68,7 @@ Show.create(name: elem.name, air_time: elem.air_time, status: elem.status,
             banner: elem.series_banners('en').first.url,
             poster: elem.posters('en').first.url)
 
-profiles = Profile.create([
-
-  {
-    name: 'Kevin'
-  },
-
-  {
-    name: 'Tyler'
-  }
-  ])
+Profile.create([
+  { name: 'Kevin' },
+  { name: 'Tyler' }
+])
