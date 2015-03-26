@@ -90,7 +90,7 @@ class ShowsController < ApplicationController
   def build_show
     tvdb = TvdbParty::Search.new("A42FACB54E7022B1")
     show = tvdb.get_series_by_id(params[:series_id])
-    redirect to shows_url if show.nil?
+    redirect_to shows_url if show.nil?
     Show.new(name: show.name, air_time: show.air_time, status: show.status,
              episodes: show.episodes.last(20),
              banner: show.series_banners('en').first.url,
