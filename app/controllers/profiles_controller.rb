@@ -34,10 +34,10 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
-    session[:profile_id] = @profile.id
 
     respond_to do |format|
       if @profile.save
+        session[:profile_id] = @profile.id
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else

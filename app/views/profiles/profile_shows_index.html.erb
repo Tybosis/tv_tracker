@@ -14,12 +14,6 @@
       <div class="day">
         <div class="head">
         </div>
-
-        <% @profile.shows.each do |show| %>
-          <div class="time">
-            <%= show.when_showing(today) %>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>

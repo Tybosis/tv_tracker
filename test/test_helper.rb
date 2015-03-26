@@ -27,6 +27,8 @@ class ActiveSupport::TestCase
     click_on "New Profile"
     fill_in("Name", with: "Superman")
     click_on "Create Profile"
+    visit "/profiles"
+    click_on "Use"
   end
 
   def add_show

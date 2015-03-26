@@ -13,21 +13,13 @@ feature "A user should be able to sign up" do
   end
 
   scenario "User signs in and then logs out successfully" do
-    visit "/"
-    click_on "Sign In"
-    fill_in("Email", with: "clark@dailyplanet.com")
-    fill_in("Password", with: "1234fake")
-    click_on "Log in"
+    sign_in
     click_on "Sign Out"
     page.text.must_include('Signed out successfully')
   end
 
   scenario "User signs in and edits email address" do
-    visit "/"
-    click_on "Sign In"
-    fill_in("Email", with: "clark@dailyplanet.com")
-    fill_in("Password", with: "1234fake")
-    click_on "Log in"
+    sign_in
     click_on "Preferences"
     fill_in("Email", with: "bruce@wayneenterprises.com")
     fill_in("Current password", with: "1234fake")

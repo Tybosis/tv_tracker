@@ -6,7 +6,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
   scenario "As a user I want to see my show list" do
     sign_in
     add_show
-    visit profile_path(users(:superman).profiles.first.id)
+    click_on "My Shows"
     page.text.must_include "Big Bang Theory"
   end
 
@@ -29,7 +29,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
     visit "/shows"
     all('a').select { |link| link.text == "Show" }.first.click
     click_on 'Add'
-    visit profile_path(users(:superman).profiles.first.id)
+    click_on "My Shows"
     page.text.must_include "Big Bang Theory"
     all('a').select { |link| link.text == "Remove Show" }.first.click
     page.text.wont_include "Big Bang Theory"
