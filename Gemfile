@@ -13,6 +13,7 @@ gem 'tvdb_party'
 gem 'devise'
 gem 'pundit'
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'byebug'
@@ -32,4 +33,5 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'puma'
 end

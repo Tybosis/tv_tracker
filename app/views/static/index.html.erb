@@ -10,27 +10,29 @@
 
 <div id="example_callouts">
   <div class="container">
-    <div class="third">
-      <div class="example_co">
-        <%= image_tag("example_co1.jpg", :alt => "Your calendar") %>
+    <div class="row">
+      <div class="col-xs-11 col-sm-4 xs-text-center">
+        <div class="example_co">
+          <%= image_tag("example_co1.jpg", :alt => "Your calendar") %>
+        </div>
       </div>
-    </div>
 
-    <div class="third">
-      <div class="example_co">
-        <%= image_tag("example_co2.jpg", :alt => "Your show list") %>
+      <div class="col-xs-11 col-sm-4 xs-text-center">
+        <div class="example_co">
+          <%= image_tag("example_co2.jpg", :alt => "Your show list") %>
+        </div>
       </div>
-    </div>
 
-    <div class="third">
-      <div class="example_co">
-        <%= image_tag("example_co3.jpg", :alt => "All the shows you could ever watch") %>
+      <div class="col-xs-11 col-sm-4 xs-text-center">
+        <div class="example_co">
+          <%= image_tag("example_co3.jpg", :alt => "All the shows you could ever watch") %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="container">
-  <%= link_to "Customize your tv", shows_path, :class => 'btn customize' %>
+  <%= link_to "Customize your tv", shows_path, :class => 'button customize' %>
 </div>
 

@@ -1,8 +1,23 @@
-<div class="profile-links">
-  <%= link_to "Browse", shows_path %>
-  <%= link_to "My Shows", profile_path(@current_profile) %>
-  <%= link_to "Calendar", profile_shows_path(@current_profile) %>
-  <%= link_to "Profiles", profiles_path %>
+<div class="profile-links col-xs-12 col-sm-3 col-md-2 xs-text-center sm-text-left">
+  <nav>
+  <%= link_to "Shows", shows_path, :class => "xs-text-right sm-text-center" %>
+    <ul>
+      <li><%= link_to "Browse", shows_path %></li>
+      <li><%= link_to "My Shows", profile_path(@current_profile) %></li>
+      <li><%= link_to "Calendar", profile_shows_path(@current_profile) %></li>
+    </ul>
+  </nav>
+
+  <nav>
+    <%= link_to "Settings", profiles_path, :class => "xs-text-left sm-text-center" %>
+    <ul>
+      <li><%= link_to "Profiles", profiles_path %></li>
+      <li><%= link_to "Preferences", edit_user_registration_path %></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="search_bar col-xs-12 col-sm-4 xs-text-center sm-text-left">
   <%= form_tag show_search_path, :method => 'get' do %>
     <%= text_field_tag :Search, params[:search] %>
     <%= submit_tag "Search" %>
