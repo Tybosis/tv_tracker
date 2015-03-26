@@ -1,1 +1,1 @@
-TVDB = TvdbParty::Search.new("A42FACB54E7022B1")
+TVDB = TvdbParty::Search.new(ENV['TVDB_KEY'])
