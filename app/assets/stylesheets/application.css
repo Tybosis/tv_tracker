@@ -23,6 +23,14 @@ img{
   width:100%;
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 .img_left{
   float:left;
   margin-right:20px;
@@ -53,10 +61,15 @@ img{
 
 
 /* Small devices (tablets, 768px and ) */
-@media (max-width: 765) {
+@media (max-width: 765px) {
   header .logo{
     width:80%!important;
     margin:10px auto!important;
+  }
+  .box-container {
+    margin: 15px auto!important;
+    display: block!important;
+    float:none!important;
   }
 }
 
@@ -136,7 +149,13 @@ img{
   display:inline-block;
   padding:15px;
   float:left;
-  margin-right:20px;
+  margin-top: 20px;
+}
+.box-container a,
+.box-container label,
+.box-container h3,
+.box-container p {
+  color: white;
 }
 
 .poster {

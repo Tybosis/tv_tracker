@@ -11,9 +11,8 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
   scenario "As a user I want to see my show list" do
     add_show
     click_on "My Shows"
-    page.text.must_include "Big Bang Theory"
+    page.html.must_include "http://thetvdb.com/banners/posters/80379-18.jpg"
   end
-
 
   # search for a show on the shows_show page
   scenario "As a user I want to be able to search for a show" do
@@ -26,21 +25,21 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
   end
 
   # delete a show from my list because I don't like it anymore
-  scenario "As a user I want to delete my show list" do
+  scenario "As a user I want to delete a show from my showlist" do
     add_show
     visit "/shows"
     click_on "Add to profile"
     click_on "My Shows"
-    page.text.must_include "Big Bang Theory"
+    page.html.must_include "http://thetvdb.com/banners/posters/80379-18.jpg"
     all('a').select { |link| link.text == "Remove Show" }.first.click
-    page.text.wont_include "Big Bang Theory"
+    page.html.wont_include "http://thetvdb.com/banners/posters/80379-18.jpg"
   end
 
   # scroll through a huge list of shows to keep track of
   scenario "As a user I want to browse through shows, clicking on one should take me to the show_show_page" do
     add_show
     visit shows_path
-    click_on "Add to profile"
+    find(:xpath, "//a[@href='/shows/1']").click
     page.text.must_include "Big Bang Theory"
   end
 
@@ -50,7 +49,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
     visit shows_path
     page.html.must_include "http://thetvdb.com/banners/posters/80379-18.jpg"
     click_on "Add to profile"
-    page.text.must_include "Big Bang Theory"
+    page.html.must_include "http://thetvdb.com/banners/posters/80379-18.jpg"
   end
 
   # search should return a list of shows from tvdb

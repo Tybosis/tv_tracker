@@ -29,9 +29,10 @@ class ActiveSupport::TestCase
     visit "/profiles"
     click_on "New Profile"
     fill_in("Name", with: "Superman")
+    find("img[@alt='Avatar1']").click
     click_on "Create Profile"
     visit "/profiles"
-    click_on "Use"
+    find(".rounded").click
   end
 
   def add_show
