@@ -1,14 +1,16 @@
 <div class="row" style="width:90%; margin:15px 5%;">
   <%= link_to edit_profile_path @profile do %>
     <%= image_tag asset_path(@profile.image_url), class: "profile_pic sm right rounded" %>
-  <% end %>  
+  <% end %>
   <h2>Your Shows</h2>
 </div>
 
 <div class="profile_show_list clearfix">
 <% @profile.shows.each do |show| %>
   <div class="profile_show">
-    <%= image_tag show.poster %>
+    <%= link_to show_path(show) do %>
+      <%= image_tag show.poster %>
+    <% end %>
     <strong>
     <%= link_to 'Remove Show', profile_remove_show_from_profile_path(@profile, show), :method => :delete %>
     <strong>

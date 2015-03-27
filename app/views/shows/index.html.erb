@@ -11,8 +11,8 @@
     <div class="shows_mover">
       <% @shows.each do |show| %>
         <div class="show">
-          <%= link_to show do %>
-          <img src="<%= show.poster %>">
+          <%= link_to show_path(show) do %>
+            <img src="<%= show.poster %>">
           <% end %>
           <%= form_for @profile do |f| %>
             <%= f.hidden_field :show_ids, value: @profile.show_ids << show.id %>
