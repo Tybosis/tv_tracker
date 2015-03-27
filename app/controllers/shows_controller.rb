@@ -1,14 +1,12 @@
 class ShowsController < ApplicationController
-  require 'date'
-  before_action :set_show, only: [:show]
   before_action :authenticate_user!
   # GET /shows
   # GET /shows.json
   def index
     @profile = current_profile
-    if params[:profile_id] #if profile
+    if params[:profile_id] # if profile
       @shows = ShowPolicy::Scope.new(current_profile, Show).resolve
-      render '/profiles/profile_shows_index' #goto Profile/shows (calendar)
+      render '/profiles/profile_shows_index' # goto Profile/shows (calendar)
     else
       @shows = Show.all # go to all shows
     end
@@ -17,6 +15,7 @@ class ShowsController < ApplicationController
   # GET /shows/1
   # GET /shows/1.json
   def show
+    @show = Show.find(params[:id])
     @profile = Profile.find(session[:profile_id])
   end
 
@@ -42,22 +41,27 @@ class ShowsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_show
-    @show = Show.find(params[:id])
-  end
-
   # Never trust parameters from the scary internet, only allow the white list through.
   def show_params
     params.require(:show).permit(:name, :air_time, :status, :next_episode, :overview, :banner, :poster)
   end
 
   def build_show
-      show = TVDB.get_series_by_id(params[:series_id])
-      Show.new(name: show.name, air_time: show.air_time, status: show.status,
-               episodes: show.episodes.last(20),
-               banner: show.series_banners('en').first.url,
-               poster: show.posters('en').first.url,
-               overview: show.overview)
+    show = TVDB.get_series_by_id(params[:series_id])
+    Show.new(name: show.name, air_time: show.air_time, status: show.status,
+             episodes: show.episodes.last(20),
+             banner: get_banner(show),
+             poster: get_poster(show),
+             overview: show.overview)
+  end
+
+  def get_banner(show)
+    return "" if show.series_banners('en').nil?
+    show.series_banners('en').first.url
+  end
+
+  def get_poster(show)
+    return "" if show.posters('en').nil?
+    show.posters('en').first.url
   end
 end

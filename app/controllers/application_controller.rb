@@ -11,12 +11,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_profile
-    if current_user
-      if !session[:profile_id]
-        redirect_to profiles_path && return
-      else
-        @current_profile ||= Profile.find(session[:profile_id])
-      end
+    return unless current_user
+    if !session[:profile_id]
+      redirect_to profiles_path && return
+    else
+      @current_profile ||= Profile.find(session[:profile_id])
     end
   end
 end

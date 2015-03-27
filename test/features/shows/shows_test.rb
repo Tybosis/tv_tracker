@@ -1,7 +1,6 @@
 require "test_helper"
 
 feature "As a user I want to be able to see, edit, update and delete my show list" do
-
   before do
     sign_in
     create_profile

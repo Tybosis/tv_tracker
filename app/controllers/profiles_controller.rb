@@ -37,9 +37,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        session[:profile_id] = @profile.id
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
+        good_change(format, :created)
       else
         format.html { render :new }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
@@ -52,9 +50,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        session[:profile_id] = @profile.id
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @profile }
+        good_change(format, :ok)
       else
         format.html { render :edit }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
@@ -79,18 +75,16 @@ class ProfilesController < ApplicationController
   end
 
   def remove_show_from_profile
-    @profile = Profile.find(params[:profile_id]) #can do that in before_filter
+    @profile = Profile.find(params[:profile_id])
     show = Show.find(params[:format])
     @profile.shows.delete show
     redirect_to @profile
   end
 
   def set_current_profile
-    begin
-      @current_profile ||= Profile.find(session[:profile_id])
-    rescue ActiveRecord::RecordNotFound
-      @current_profile = nil
-    end
+    @current_profile ||= Profile.find(session[:profile_id])
+  rescue ActiveRecord::RecordNotFound
+    @current_profile = nil
   end
 
   private
@@ -104,5 +98,11 @@ class ProfilesController < ApplicationController
   def profile_params
     params[:profile][:show_ids] = params[:profile][:show_ids].split if params[:profile][:show_ids]
     params.require(:profile).permit(:name, :image_url, show_ids: [])
+  end
+
+  def good_change(format, status)
+    session[:profile_id] = @profile.id
+    format.html { redirect_to @profile, notice: 'Profile was successfully changed.' }
+    format.json { render :show, status: status, location: @profile }
   end
 end

@@ -1,53 +1,42 @@
-
-# Cop supports --auto-correct.
-Lint/UnusedBlockArgument:
+# Offense count: 1
+# Configuration parameters: AllowSafeAssignment.
+Lint/AssignmentInCondition:
   Enabled: false
 
+# Offense count: 2
+Lint/HandleExceptions:
+  Enabled: false
+
+# Offense count: 74
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
   Max: 120
 
+# Offense count: 1
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 15
+
+# Offense count: 1
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/ClassAndModuleChildren:
   Enabled: false
 
-# Cop supports --auto-correct.
-Style/CommentIndentation:
-  Enabled: false
-
+# Offense count: 30
 Style/Documentation:
   Enabled: false
 
-# Cop supports --auto-correct.
-Style/EmptyLines:
-  Enabled: false
-
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-# Cop supports --auto-correct.
-Style/IndentationConsistency:
-  Enabled: false
-
-# Cop supports --auto-correct.
-# Configuration parameters: Width.
-Style/IndentationWidth:
-  Enabled: false
-
-# Cop supports --auto-correct.
-Style/LeadingCommentSpace:
-  Enabled: false
-
+# Offense count: 1
 # Cop supports --auto-correct.
 Style/NumericLiterals:
   MinDigits: 15
 
+# Offense count: 22
 # Cop supports --auto-correct.
 Style/SingleSpaceBeforeFirstArg:
   Enabled: false
 
+# Offense count: 349
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/StringLiterals:
