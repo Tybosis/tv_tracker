@@ -56,12 +56,12 @@ class ShowsController < ApplicationController
   end
 
   def get_banner(show)
-    return "" if show.series_banners('en').nil?
+    return "" if show.series_banners('en').first.nil?
     show.series_banners('en').first.url
   end
 
   def get_poster(show)
-    return "" if show.posters('en').nil?
+    return "" if show.posters('en').first.nil?
     show.posters('en').first.url
   end
 end
