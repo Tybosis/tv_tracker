@@ -6,7 +6,9 @@
 
   <div class="calendar_hider">
     <div class="calendar_titles">
-      <div class="calendar_spacer">Shows</div>
+      <div class="calendar_spacer">
+        <p style="font-size:20px; line-height:40px;">Shows</p>
+      </div>
       <% @profile.shows.each do |show| %>
         <%= link_to show_path(show) do %>
           <%= image_tag show.banner, :class => 'calendar_banner' %>
