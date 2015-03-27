@@ -1,9 +1,9 @@
-<h2>Show List</h2>
-
-<p>
-  <strong>Profile:</strong>
-  <%= @profile.name %>
-</p>
+<div class="row" style="width:90%; margin:0 5%;">
+  <%= link_to edit_profile_path @profile do %>
+    <%= image_tag asset_path(@profile.image_url), class: "profile_pic sm right rounded" %>
+  <% end %>  
+  <h2>Your Shows</h2>
+</div>
 
 <div class="profile_show_list clearfix">
 <% @profile.shows.each do |show| %>

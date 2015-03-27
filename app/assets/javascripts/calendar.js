@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function(){
   //set width of slideshow
   //$('#calendar_slideshow').width(shows_count * (show_width + show_margin) )
