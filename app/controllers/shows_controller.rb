@@ -54,14 +54,10 @@ class ShowsController < ApplicationController
 
   def build_show
       show = TVDB.get_series_by_id(params[:series_id])
-      banner = show.series_banners('en').first.url
-      banner = "" rescue NoMethodError
-      poster = show.posters('en').first.url
-      poster = "" rescue NoMethodError
       Show.new(name: show.name, air_time: show.air_time, status: show.status,
                episodes: show.episodes.last(20),
-               banner: banner,
-               poster: poster,
+               banner: show.series_banners('en').first.url,
+               poster: show.posters('en').first.url,
                overview: show.overview)
   end
 end
