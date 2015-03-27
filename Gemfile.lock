@@ -150,6 +150,7 @@ GEM
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    omdbapi (0.0.1)
     orm_adapter (0.5.0)
     pg (0.18.1)
     pry (0.10.1)
@@ -269,6 +270,7 @@ DEPENDENCIES
   minitest-rails-capybara
   minitest-reporters
   newrelic_rpm
+  omdbapi
   pg
   pry
   puma
