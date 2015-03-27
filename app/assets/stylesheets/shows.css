@@ -5,7 +5,7 @@
   overflow: visible;
 }
 
-.show_slider .slideshow_nav{
+.slideshow_nav{
   height:1px;
   overflow: visible;
   position:absolute;

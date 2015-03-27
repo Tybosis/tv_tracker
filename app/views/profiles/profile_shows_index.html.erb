@@ -1,20 +1,45 @@
-<h1>Your Shows are Coming!</h1>
+<div id="calendar_container" class="clearfix">
+  <div class="slideshow_nav">
+    <div class="show_slider_left">&nbsp;</div>
+    <div class="show_slider_right">&nbsp;</div>
+  </div>
 
-<div id="Calendar-container">
-  <div class="container">
-    <div class="calendar-titles">
-      <%= @profile.name %>
+  <div class="calendar_hider">
+    <div class="calendar_titles">
+      <div class="calendar_spacer">Shows</div>
       <% @profile.shows.each do |show| %>
-        <a href="">
-          <%= show.name %>
-        </a>
+        <%= link_to show_path(show) do %>
+          <%= image_tag show.banner, :class => 'calendar_banner' %>
+        <% end %>
       <% end %>
     </div>
-    <div id="calendar-slideshow">
-      <div class="day">
-        <div class="head">
-        </div>
+
+    <div id="calendar_slideshow">
+      <div class='calendar_row clearfix'>
+        <% (0..60).each do |day| %>
+          <div class="head calendar_item">
+            <%= (Date.today + day).strftime("%a %e") %>
+          </div>
+        <% end %>
       </div>
+
+      <% @profile.shows.each do |show| %>
+        <% episodes = show.episodes %>
+
+        <div class='calendar_row clearfix'>
+          <% (0..60).each do |day| %>
+            <% if is_playing_on(Date.today + day, episodes) %>
+              <div class="time calendar_item full">
+            <% else %>
+              <div class="time calendar_item empty">
+            <% end %>
+              <%= show.air_time if is_playing_on(Date.today + day, episodes) %>
+            </div>
+          <% end %>
+        </div>
+
+      <% end %>
+        
     </div>
   </div>
 </div>
