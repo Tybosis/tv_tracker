@@ -4,7 +4,7 @@
 
   <h1>Close matches</h1>
 
-  
+
   <% @shows.each do |show| %>
     <div class="search_show">
       <% if Show.exists?(:name => show["SeriesName"]) %>
