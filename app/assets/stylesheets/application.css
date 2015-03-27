@@ -21,8 +21,8 @@
  */
 
 body{
-  background: url('background.jpg') center 70px no-repeat;
-  background-size: 100% auto;
+  background: url('background.jpg') center 65px no-repeat;
+  background-size: 800px auto;
 }
 
 body.home{
@@ -104,6 +104,10 @@ img{
   .sm-text-right{
     text-align:right;
   }
+
+  body{
+    background-size: 1000px auto;
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -119,6 +123,10 @@ img{
   .md-text-right{
     text-align:right;
   }
+
+  body{
+    background-size: 1250px auto;
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -133,6 +141,10 @@ img{
 
   .lg-text-right{
     text-align:right;
+  }
+
+  body{
+    background-size: 2000px auto;
   }
 }
 
@@ -181,7 +193,8 @@ h1,h2,h3{
 .box-container label,
 .box-container h3,
 .box-container p {
-  color: white;
+  color: white!important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 .poster {
@@ -221,9 +234,7 @@ header .logo{
   font-size:13px;
 }
 
-header .sign_in_nav{
-  text-align:right;
-}
+
 
 header nav{
   position:relative;
@@ -288,6 +299,19 @@ header .search_bar{
 header .search_bar input[type=text]{
   width:100%;
   max-width:120px;
+}
+
+header .sign_in_nav{
+  text-align:right;
+  float:right;
+}
+
+header .sign_in_nav a{
+  width:48%;
+}
+
+header .sign_in_nav a.full{
+  width:100%;
 }
 
 
