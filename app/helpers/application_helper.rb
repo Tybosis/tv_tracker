@@ -12,4 +12,10 @@ module ApplicationHelper
     end
     ans
   end
+
+  def is_playing_on(today, episodes)
+    episodes.detect do |episode|
+      episode.air_date == today
+    end
+  end
 end
