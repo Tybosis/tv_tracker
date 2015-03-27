@@ -1,4 +1,4 @@
-# TV Tracker
+# [TV Tracker](http://tv-tracker.herokuapp.com)
 
 [![Code Climate](https://codeclimate.com/github/Tybosis/tv_tracker/badges/gpa.svg)](https://codeclimate.com/github/Tybosis/tv_tracker)
 [![Test Coverage](https://codeclimate.com/github/Tybosis/tv_tracker/badges/coverage.svg)](https://codeclimate.com/github/Tybosis/tv_tracker)
