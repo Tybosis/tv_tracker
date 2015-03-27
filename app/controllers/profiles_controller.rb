@@ -39,8 +39,7 @@ class ProfilesController < ApplicationController
       if @profile.save
         good_change(format, :created)
       else
-        format.html { render :new }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
+        bad_change(format, :new)
       end
     end
   end
@@ -52,8 +51,7 @@ class ProfilesController < ApplicationController
       if @profile.update(profile_params)
         good_change(format, :ok)
       else
-        format.html { render :edit }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
+        bad_change(format, :edit)
       end
     end
   end
@@ -104,5 +102,10 @@ class ProfilesController < ApplicationController
     session[:profile_id] = @profile.id
     format.html { redirect_to @profile, notice: 'Profile was successfully changed.' }
     format.json { render :show, status: status, location: @profile }
+  end
+
+  def bad_change(format, status)
+    format.html { render status }
+    format.json { render json: @profile.errors, status: :unprocessable_entity }
   end
 end
