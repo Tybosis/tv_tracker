@@ -1,17 +1,26 @@
-<p>Results</p>
-<ul>
-  <% if @shows.empty? %>
-    <h1>No Search Results. Please try again.</h1>
+<% if @shows.empty? %>
+  <h1>No Search Results. Please try again.</h1>
+<% else %>
+
+  <h1>Close matches</h1>
+
+  
+  <% @shows.each do |show| %>
+    <div class="search_show">
+      <% if Show.exists?(:name => show["SeriesName"]) %>
+          <%= link_to show["SeriesName"], show_path(Show.where(:name => show["SeriesName"]).first.id), class: "search_title" %>
+
+          <%= image_tag "http://thetvdb.com/banners/" + show["banner"], class: "search_banner" %>
+        <% else %>
+          <%= link_to show["SeriesName"], shows_path(series_id: show["seriesid"]), :method => :post, class: "search_title" %>
+        <% end %>
+
+      <p>
+        <%= show["Overview"] %>
+      </p>
+    </div>
   <% end %>
 
-  <% @shows.each do |show| %>
-    <% if Show.exists?(:name => show["SeriesName"]) %>
-        <li><%= link_to show["SeriesName"], show_path(Show.where(:name => show["SeriesName"]).first.id) %></li>
-      <% else %>
-        <li><%= link_to show["SeriesName"], shows_path(series_id: show["seriesid"]), :method => :post %></li>
-      <% end %>
-    <li><%= show["Overview"] %></li>
-  <% end %>
-</ul>
+<% end %>
 
 <%= link_to "Back", :back %>
