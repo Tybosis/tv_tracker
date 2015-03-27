@@ -13,7 +13,7 @@ module ApplicationHelper
     ans
   end
 
-  def is_playing_on?(today, episodes)
+  def playing_on?(today, episodes)
     episodes.detect do |episode|
       episode.air_date == today
     end
