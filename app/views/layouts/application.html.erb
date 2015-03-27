@@ -11,7 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<%= content_tag :body, class: "" + (current_page?(root_url) ? "home" : "" ) do %>
   <% flash.each do |key, value| %>
     <div class="alert-box round <%= flash_class(key) %>">
       <%= value %>
@@ -34,10 +34,17 @@
     </div>
   </header>
 
-<div class="container body">
-<%= yield %>
-</div>
+<% if current_page?(root_url) %>
+  <div class="banner banner-home">
+    <%= image_tag("banner.jpg", :alt => "Track Your Favorite Tv Shows Banner") %>
+  </div>
+<% end %>
 
 
-</body>
+<%= content_tag :div, class: "container body" do %>
+  <%= yield %>
+<% end %>
+
+
+<% end %>
 </html>

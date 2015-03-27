@@ -19,6 +19,16 @@
  *= require profiles
  *= require calendar
  */
+
+body{
+  background: url('background.jpg') center 70px no-repeat;
+  background-size: 100% auto;
+}
+
+body.home{
+  background-position:center 400px;
+}
+
 img{
   width:100%;
 }
@@ -33,6 +43,10 @@ img{
   float:right;
   margin-left:20px;
   margin-bottom:25px;
+}
+
+.right{
+  float:right;
 }
 
 .clear{
@@ -53,10 +67,12 @@ img{
 
 
 /* Small devices (tablets, 768px and ) */
-@media (max-width: 765) {
+@media (max-width: 765px) {
   header .logo{
     width:80%!important;
     margin:10px auto!important;
+    display:block;
+    float:none;
   }
 }
 
@@ -108,6 +124,10 @@ img{
 }
 
 
+h1,h2,h3{
+  color: #1895D3!important;
+}
+
 .alert-box{
   display:none!important;
 }
@@ -126,6 +146,12 @@ img{
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+}
+
+.rounded.sm{
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .box-container{
@@ -147,7 +173,7 @@ img{
 .body.container{
   background:#F0EBEB;
   background: rgba(240, 235, 235, .85);
-  min-height:1200px;
+  min-height:700px;
 }
 
 header{
@@ -258,12 +284,27 @@ header .search_bar input[type=text]{
   margin-left:-1000px;
 }
 
-.banner.banner-home{
-  overflow:visible;
+.home .banner{
+  margin-bottom:0;
 }
 
-.banner.banner-home img{
+.home .banner img{
   width:auto;
+}
+
+.home .container.body{
+  margin-top:0;
+  padding:0;
+  padding-top:30px;
+}
+
+.home .copy{
+  text-align:center;
+  padding-left:20px;
+  padding-right:20px;
+  width:60%;
+  margin:0 auto 30px auto;
+  display:block;
 }
 
 #example_callouts{
@@ -271,8 +312,6 @@ header .search_bar input[type=text]{
   background:#48A8D0;
   margin-top:30px;
   margin-bottom:30px;
-  padding-top:20px;
-  padding-bottom:20px;
 }
 
 #example_callouts .example_co{
@@ -285,6 +324,8 @@ header .search_bar input[type=text]{
   display:block;
   margin:0 auto;
   height:50px;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 
