@@ -17,6 +17,7 @@
  *= require scaffolds
  *= require shows
  *= require profiles
+ *= require calendar
  */
 img{
   width:100%;
