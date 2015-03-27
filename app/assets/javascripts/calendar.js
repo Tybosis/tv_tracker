@@ -29,7 +29,7 @@ function slide_right(mover){
   width = $(mover).width();
   left = parseInt( $(mover).css('left') );
 
-  if (Math.abs(left) > (width - 6 * item_width) ) 
+  if (Math.abs(left) > (width - 6 * item_width) )
     return false;
 
   $(mover).css('left', left - item_width + "px");
