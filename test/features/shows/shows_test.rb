@@ -54,7 +54,7 @@ feature "As a user I want to be able to see, edit, update and delete my show lis
   end
 
   # search should return a list of shows from tvdb
-  scenario "Search should return multiple results" do
+  scenario "A good search should return multiple results" do
     visit "/shows"
     fill_in("Search", with: "the flash")
     click_on "Search"
