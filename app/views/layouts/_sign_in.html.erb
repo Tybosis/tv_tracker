@@ -1,8 +1,11 @@
-<nav class="sign_in_nav xs-text-center sm-text-right">
-  <% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "full" %>
-  <% else %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= link_to "Sign In", new_user_session_path %>
-  <% end %>
-</nav>
+
+<%= content_tag :div, class: "sign_in_nav col-xs-12 col-md-3" + (user_signed_in? ? " col-sm-2" : " col-sm-4") do %>
+  <nav class="sign_in_nav xs-text-center sm-text-right">
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "full" %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "half" %>
+      <%= link_to "Sign In", new_user_session_path, class: "half" %>
+    <% end %>
+  </nav>
+<% end %>

@@ -22,16 +22,14 @@
     <div class="container">
       <div class="row">
         <%= link_to root_path, :class => 'logo-container' do %>
-          <%= image_tag 'logo.png', :class => 'logo col-xs-12 col-sm-2 col-sm-offset-1 block' %>
+          <%= image_tag 'logo.png', :class => 'logo col-xs-12 col-sm-3 block' %>
         <% end %>
 
         <% if @current_profile %>
           <%= render 'layouts/header' %>
         <% end %>
 
-        <div class="sign_in_nav col-xs-12 col-sm-2 col-md-3">
-          <%= render 'layouts/sign_in' %>
-        </div>
+        <%= render 'layouts/sign_in' %>
       </div>
     </div>
   </header>

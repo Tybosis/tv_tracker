@@ -20,7 +20,12 @@
  *= require calendar
  */
 
+a:hover{
+  text-decoration:none!important;
+}
+
 body{
+  background: #1280CB;
   background: url('background.jpg') center 65px no-repeat;
   background-size: 800px auto;
 }
@@ -190,6 +195,7 @@ h1,h2,h3{
   margin-top: 20px;
 }
 
+.box-container em,
 .box-container .label,
 .box-container a,
 .box-container label,
@@ -197,6 +203,10 @@ h1,h2,h3{
 .box-container p {
   color: white!important;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.box-container em{
+  font-size:.85em;
 }
 
 .poster {
@@ -316,6 +326,10 @@ header .sign_in_nav a.full{
   width:100%;
 }
 
+header .sign_in_nav a.half{
+  width:48%;
+}
+
 
 .banner{
   overflow:hidden;
@@ -357,6 +371,7 @@ header .sign_in_nav a.full{
   background:#48A8D0;
   margin-top:30px;
   margin-bottom:30px;
+  min-height:190px;
 }
 
 #example_callouts .example_co{
