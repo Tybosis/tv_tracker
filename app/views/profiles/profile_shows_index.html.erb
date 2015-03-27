@@ -30,18 +30,18 @@
 
         <div class='calendar_row clearfix'>
           <% (0..60).each do |day| %>
-            <% if is_playing_on(Date.today + day, episodes) %>
+            <% if is_playing_on?(Date.today + day, episodes) %>
               <div class="time calendar_item full">
             <% else %>
               <div class="time calendar_item empty">
             <% end %>
-              <%= show.air_time if is_playing_on(Date.today + day, episodes) %>
+              <%= show.air_time if is_playing_on?(Date.today + day, episodes) %>
             </div>
           <% end %>
         </div>
 
       <% end %>
-        
+
     </div>
   </div>
 </div>
