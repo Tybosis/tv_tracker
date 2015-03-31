@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
   $('.profile-pic.chooser').each(function(){
     $(this).click(function(){
       $('.profile-pic.chooser').each(function(){ $(this).removeClass('selected') });
@@ -7,4 +7,4 @@ $(document).ready(function(){
       $('input#profile-pic').val(pic);
     })
   })
-});
+});*/

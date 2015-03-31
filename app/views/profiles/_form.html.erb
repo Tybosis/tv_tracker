@@ -1,4 +1,4 @@
-<%= form_for(@profile) do |f| %>
+<%= form_for(@profile, html: {multipart: true}) do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -17,32 +17,15 @@
   </div>
 
   <div class="clearfix">
-    <div class="profile-pic chooser rounded">
-      <%= image_tag asset_url("avatars/avatar1.png"), :pic => "1", :class => 'rounded' %>
-    </div>
-
-    <div class="profile-pic chooser rounded">
-      <%= image_tag asset_url("avatars/avatar2.png"), :pic => "2", :class => 'rounded' %>
-    </div>
-
-    <div class="profile-pic chooser rounded">
-      <%= image_tag asset_url("avatars/avatar3.png"), :pic => "3", :class => 'rounded' %>
-    </div>
-
-    <div class="profile-pic chooser rounded">
-      <%= image_tag asset_url("avatars/avatar4.png"), :pic => "4", :class => 'rounded' %>
-    </div>
-
-    <div class="profile-pic chooser rounded">
-      <%= image_tag asset_url("avatars/avatar5.png"), :pic => "5", :class => 'rounded' %>
-    </div>
-
-    <div class="profile-pic chooser rounded">
-      <%= image_tag asset_path("avatars/avatar6.png"), :pic => "6", :class => 'rounded' %>
-    </div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </div>
 
-  <%= f.hidden_field :image_url, :id => 'profile-pic',:value => "avatars/avatar-blank.png" %>
+   <div class="clearfix">
+    <%= f.label :remote_image_url, "or image url" %>
+    <%= f.text_field :remote_image_url %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

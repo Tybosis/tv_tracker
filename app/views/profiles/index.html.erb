@@ -4,7 +4,7 @@
   <div class="profile">
     <%= link_to select_profile_path(profile) do %>
       <% if profile.image_url %>
-        <%= image_tag asset_path(profile.image_url), :class => 'rounded' %>
+        <%= image_tag asset_path(profile.image.to_s), :class => 'rounded' %>
       <% else %>
         <%= image_tag asset_path('avatars/avatar-blank.png'), :class => 'rounded' %>
       <% end %>

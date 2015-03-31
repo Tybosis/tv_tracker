@@ -1,6 +1,6 @@
 <div class="row" style="width:90%; margin:15px 5%;">
   <%= link_to edit_profile_path @profile do %>
-    <%= image_tag asset_path(@profile.image_url), class: "profile_pic sm right rounded" %>
+    <%= image_tag asset_path(@profile.image.to_s), class: "profile_pic sm right rounded" %>
   <% end %>
   <h2>Your Shows</h2>
 </div>
