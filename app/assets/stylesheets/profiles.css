@@ -37,3 +37,14 @@
 .profile-pic img{
   background: rgb(71, 156, 215);
 }
+
+#add_profile_btn{
+  cursor:pointer;
+}
+
+#add_profile_form{
+  transition:1s height;
+  height:1px;
+  margin-top:15px;
+  overflow:hidden;
+}

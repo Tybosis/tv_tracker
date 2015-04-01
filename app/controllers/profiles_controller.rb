@@ -12,6 +12,8 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = policy_scope(Profile)
+    @uploader = Profile.new.image
+    @uploader.success_action_redirect = new_profile_url
   end
 
   # GET /profiles/1
@@ -22,7 +24,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
+    @profile = Profile.new(:key => params[:key])
   end
 
   # GET /profiles/1/edit
@@ -95,7 +97,7 @@ class ProfilesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def profile_params
     params[:profile][:show_ids] = params[:profile][:show_ids].split if params[:profile][:show_ids]
-    params.require(:profile).permit(:name, :image, :remote_image_url, show_ids: [])
+    params.require(:profile).permit(:name, :image, :remote_image_url, :key, show_ids: [])
   end
 
   def good_change(format, status)

@@ -16,15 +16,8 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="clearfix">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-
-   <div class="clearfix">
-    <%= f.label :remote_image_url, "or image url" %>
-    <%= f.text_field :remote_image_url %>
-  </div>
+  <%= f.hidden_field :key %>
+  <p>Picture: <%= @profile.image_name %></p>
 
   <div class="actions">
     <%= f.submit %>
