@@ -16,6 +16,8 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'newrelic_rpm'
 gem 'jquery-turbolinks'
 gem 'carrierwave'
+gem 'carrierwave_direct'
+gem 'sidekiq'
 gem 'mini_magick'
 gem 'fog'
 
