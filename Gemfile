@@ -15,6 +15,9 @@ gem 'pundit'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'newrelic_rpm'
 gem 'jquery-turbolinks'
+gem 'mail_form'
+gem 'simple_form'
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'byebug'
@@ -22,6 +25,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'pry'
+  gem 'brakeman'
 end
 
 group :test do
@@ -29,6 +33,7 @@ group :test do
   gem 'guard-minitest'
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
+  gem 'email_spec'
 end
 
 group :production do

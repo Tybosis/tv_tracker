@@ -5,12 +5,19 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/rails/capybara'
 require 'minitest/reporters'
+require 'minitest-matchers'
+require 'email_spec'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class CapybaraTestCase < MiniTest::Spec
   include Capybara::DSL
   register_spec_type(/page$/, self)
+end
+
+class MiniTest::Unit::TestCase
+  include EmailSpec::Helpers
+  include EmailSpec::Matchers
 end
 
 class ActiveSupport::TestCase
