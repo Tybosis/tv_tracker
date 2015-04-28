@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   get '/welcome' => 'welcome#index'
   root 'static#index'
+
+  get '/contacts' => 'contact#new'
 end

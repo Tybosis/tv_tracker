@@ -1,4 +1,7 @@
 class ContactController < ApplicationController
+  def new
+  end
+
   def send_mail
     name = params[:name]
     email = params[:email]
