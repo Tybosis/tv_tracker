@@ -1,10 +1,10 @@
 class ContactMailer < ApplicationMailer
-  default to: 'tyler.pottle@gmail.com'
+  default to: 'tvtrackerapplication@gmail.com'
 
-  def contact_email(name, email, body)
+  def contact_email(name, email, message)
     @name = name
     @email = email
-    @body = body
+    @message = message
     mail(from: email, subject: 'Contact Request')
   end
 end

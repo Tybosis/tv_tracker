@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   get '/welcome' => 'welcome#index'
   root 'static#index'
 
-  get '/contacts' => 'contact#new'
+  resources :contacts, only: [:new, :index]
+
+  post '/send_mail' => 'contacts#send_mail'
 end
