@@ -8,6 +8,12 @@ Bundler.require(*Rails.groups)
 
 module TvTracker
   class Application < Rails::Application
+    ActionMailer::Base.smtp_settings = {
+        address: 'smtp.mandrillapp.com',
+        port: 587,
+        user_name: ENV['MANDRILL_USERNAME'],
+        password: ENV['MANDRILL_APIKEY']
+    }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
