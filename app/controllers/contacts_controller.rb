@@ -11,6 +11,6 @@ class ContactsController < ApplicationController
     email = params[:email]
     message = params[:message]
     ContactMailer.contact_email(name, email, message).deliver
-    redirect_to contacts_path, notice: 'Message sent'
+    redirect_to contacts_path, notice: 'Your message has been sent!'
   end
 end
