@@ -29,6 +29,8 @@ group :test do
   gem 'guard-minitest'
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
+  gem 'email_spec'
+  gem 'minitest-matchers'
 end
 
 group :production do
