@@ -1,0 +1,6 @@
+<div class="container-content text-center">
+  <% flash.each do |key, value| %>
+    <h2><%= value %></h2>
+  <% end %>
+  <%= link_to 'Home', root_path %>
+</div>
