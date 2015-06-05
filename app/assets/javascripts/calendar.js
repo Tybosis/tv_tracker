@@ -22,7 +22,7 @@ function slide_left(mover){
     $(mover).css('left', 0);
   else
     $(mover).css('left', left + item_width + "px");
-}
+};
 
 //move slider right
 function slide_right(mover){
@@ -33,6 +33,6 @@ function slide_right(mover){
     return false;
 
   $(mover).css('left', left - item_width + "px");
-}
+};
 
 
