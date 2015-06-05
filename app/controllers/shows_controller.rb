@@ -52,7 +52,8 @@ class ShowsController < ApplicationController
              episodes: show.episodes.last(20),
              banner: get_banner(show),
              poster: get_poster(show),
-             overview: show.overview)
+             overview: show.overview,
+             series_id: show.id)
   end
 
   def get_banner(show)
