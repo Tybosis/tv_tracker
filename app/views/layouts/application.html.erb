@@ -5,45 +5,44 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
-  <!-- Bootstrap css and js -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 </head>
-<%= content_tag :body, class: "" + (current_page?(root_url) ? "home" : "" ) do %>
-  <% flash.each do |key, value| %>
-    <div class="alert-box round <%= flash_class(key) %>">
-      <%= value %>
-    </div>
-  <% end %>
+<%= content_tag :body, class: "" + " "+(current_page?(root_url) ? "home" : "" ) do %>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger">MENU</label>
+      <ul class="navigation">
+        <li class="nav-item"><%= link_to "Browse", shows_path %></li>
+        <li class="nav-item">
+          <% if @profile != nil %>
+            <%= link_to "My Shows", profile_path(@current_profile) %>
+          <% else %>
+            <%= link_to "My Shows", new_user_registration_path %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <% if @profile != nil %>
+            <%= link_to "Settings", profile_shows_path(@current_profile) %>
+          <% else %>
+            <%= link_to "Settings", new_user_registration_path %>
+          <% end %>
+        </li>
+        <li class="nav-item"><a href="#">Help</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
+      </ul>
+  <div class="site-wrap">
 
-  <header>
-    <div class="container">
-      <div class="row">
-        <%= link_to root_path, :class => 'logo-container' do %>
-          <%= image_tag 'logo.png', :class => 'logo col-xs-12 col-sm-3 block' %>
+    <header class= "twelve columns newbanner">
+      <div>
+        <%= link_to root_path, class: 'logo-container' do %>
+          <%= image_tag 'TvTrackerLogo.png', :class => 'logo' %>
         <% end %>
-
-        <% if @current_profile %>
-          <%= render 'layouts/header' %>
-        <% end %>
-
-        <%= render 'layouts/sign_in' %>
       </div>
+    </header>
+    <div>
+      <%= content_tag :div, class: "main" do %>
+        <%= yield %>
+      <% end %>
+        <%= render 'layouts/footer' %>
+      <% end %>
     </div>
-  </header>
-
-<% if current_page?(root_url) %>
-  <div class="banner banner-home">
-    <%= image_tag("banner.jpg", :alt => "Track Your Favorite Tv Shows Banner") %>
-  </div>
-<% end %>
-
-
-<%= content_tag :div, class: "container body" do %>
-  <%= yield %>
-<% end %>
-  <%= render 'layouts/footer' %>
-<% end %>
+</body>
 </html>
