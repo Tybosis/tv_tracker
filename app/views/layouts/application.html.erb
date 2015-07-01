@@ -28,14 +28,12 @@
         <li class="nav-item"><a href="#">Help</a></li>
         <li class="nav-item"><a href="#">Contact</a></li>
       </ul>
-  <div class="site-wrap">
+  <div class="site-wrap clearfix">
 
     <header class= "twelve columns newbanner">
-      <div>
         <%= link_to root_path, class: 'logo-container' do %>
           <%= image_tag 'TvTrackerLogo.png', :class => 'logo' %>
         <% end %>
-      </div>
     </header>
     <div>
       <%= content_tag :div, class: "main" do %>
