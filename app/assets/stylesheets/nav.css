@@ -1,20 +1,4 @@
-/* Site Wrapper - Everything that isn't navigation */
-.site-wrap {
-  min-height: 100%;
-  min-width: 100%;
-  background-color: white;
-  position: relative;
-  top: 0;
-  bottom: 100%;
-  left: 0;
-  z-index: 1;
-  
-  padding: 4em;
-  background-size: 200%;
-}
-
 .navigation {
-
   width: 100%;
   height: 100%;
   position: fixed;
@@ -55,12 +39,13 @@
 label[for="nav-trigger"] {
   position: fixed;
   left: calc(100% - 6.25em);
-  top: 1.25em;  
+
   z-index: 2;
-  
+
   height: 2.5em;
   width: 5em;
   padding: .5em;
+  top: 34px;  /*calc from hieght of logo*/
   text-align: center;
   border-left: solid 1px #4c4c4c;
   cursor: pointer;
@@ -78,7 +63,7 @@ label[for="nav-trigger"] {
     bottom:  0;
     left:0;
     z-index: 1;
-    opacity: 0.65;
+    opacity: 0.85;
     background: #476145;
   }
 
@@ -89,7 +74,7 @@ label[for="nav-trigger"] {
 
   .nav-trigger:checked ~ .navigation {
     top: calc(100% - 19.5em);
-  } 
+  }
 }
 
 @media (min-width: 800px) {  /* larger */
@@ -112,7 +97,7 @@ label[for="nav-trigger"] {
   .nav-trigger:checked ~ .site-wrap {
     left: -18%;
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
-  } 
+  }
 }
 
 body {
