@@ -28,13 +28,11 @@
         <li class="nav-item"><a href="#">Help</a></li>
         <li class="nav-item"><a href="#">Contact</a></li>
       </ul>
-  <div class="site-wrap">
+  <div class="site-wrap clearfix">
     <header class= "twelve columns newbanner">
-      <div>
         <%= link_to root_path, class: 'logo-container' do %>
           <%= image_tag 'TvTrackerLogo.png', :class => 'logo' %>
         <% end %>
-      </div>
       <section class="search-bar">
         <div class="search-bar__wrapper">
           <label class="search-bar__text-box--label" labelFor="search-bar__text-box">SEARCH</label>
@@ -49,5 +47,6 @@
         <%= render 'layouts/footer' %>
       <% end %>
     </div>
+  </div>
 </body>
 </html>

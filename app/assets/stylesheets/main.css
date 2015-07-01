@@ -29,3 +29,12 @@ footer p {
   border-top: 0.225em solid #bfbfbf;
   color: #bfbfbf;
 }
+.show {
+  width: 25%;
+}
+.small {
+  width:100px;
+}
+.try{
+  max-width: 960px;
+}
