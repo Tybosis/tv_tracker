@@ -1,0 +1,36 @@
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  background-size: 200%;
+}
+
+.newbanner {
+  background-color: #e3e3e3;
+  margin-bottom: 2%;
+  /*margin-top: 1%;*/
+}
+
+.logo {
+  min-width: 60px;
+  margin: 1%;
+}
+
+.hidden {
+  display:none;
+}
+
+footer p {
+  margin-top: 3%;
+  text-align: center;
+  padding-top: 3%;
+  border-top: 0.225em solid #bfbfbf;
+  color: #bfbfbf;
+
+}
