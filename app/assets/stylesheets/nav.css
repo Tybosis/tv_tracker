@@ -8,7 +8,7 @@
   bottom: 100%;
   left: 0;
   z-index: 1;
-  
+
   padding: 4em;
   background-size: 200%;
 }
@@ -55,9 +55,9 @@
 label[for="nav-trigger"] {
   position: fixed;
   left: calc(100% - 6.25em);
-  top: 1.25em;  
+  top: 1.25em;
   z-index: 2;
-  
+
   height: 2.5em;
   width: 5em;
   padding: .5em;
@@ -89,7 +89,7 @@ label[for="nav-trigger"] {
 
   .nav-trigger:checked ~ .navigation {
     top: calc(100% - 19.5em);
-  } 
+  }
 }
 
 @media (min-width: 800px) {  /* larger */
@@ -112,7 +112,7 @@ label[for="nav-trigger"] {
   .nav-trigger:checked ~ .site-wrap {
     left: -18%;
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
-  } 
+  }
 }
 
 body {
