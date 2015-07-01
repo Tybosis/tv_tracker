@@ -5,7 +5,7 @@
   top: 0;
   right: 100%;
   bottom: 0;
-  left: 75%;
+  left: 82%;
   z-index: 0;
   list-style: none;
   background: #476145;
@@ -103,7 +103,11 @@ body {
     /* Without this, the body has excess horizontal scroll when the menu is open */
   overflow-x: hidden;
 }
-
+.clearfix{
+  overflow:auto;
+  zoom:1;
+}
 /* Micro reset */
-*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
+/**,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
 html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+*/
