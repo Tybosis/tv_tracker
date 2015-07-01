@@ -1,0 +1,27 @@
+.search-bar {
+  background-color: #476145;
+  height: calc(2% + 1em + 3em);
+  width: 100%;
+  overflow: hidden;
+}
+
+.search-bar__wrapper {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  float: right;
+}
+
+.search-bar__text-box--input {
+  float: left;
+  height: 3em;
+  margin-right: 1em;
+  width: 30em;
+}
+
+.search-bar__text-box--label {
+  font-weight: bold;
+  color: white;
+  margin-top: .84em;
+  margin-right: 1em;
+  float: left;
+}

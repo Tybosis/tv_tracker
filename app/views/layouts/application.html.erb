@@ -29,13 +29,18 @@
         <li class="nav-item"><a href="#">Contact</a></li>
       </ul>
   <div class="site-wrap">
-
     <header class= "twelve columns newbanner">
       <div>
         <%= link_to root_path, class: 'logo-container' do %>
           <%= image_tag 'TvTrackerLogo.png', :class => 'logo' %>
         <% end %>
       </div>
+      <section class="search-bar">
+        <div class="search-bar__wrapper">
+          <label class="search-bar__text-box--label" labelFor="search-bar__text-box">SEARCH</label>
+          <input type="text" class="search-bar__text-box--input" id="search-bar__text-box" placeholder="Enter search term...">
+        </div>
+      </section>
     </header>
     <div>
       <%= content_tag :div, class: "main" do %>

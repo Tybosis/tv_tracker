@@ -44,7 +44,7 @@ label[for="nav-trigger"] {
   height: 2.5em;
   width: 5em;
   padding: .5em;
-  top: 34px;  /*calc from hieght of logo*/
+  top: 34px;  /*calc from height of logo*/
   text-align: center;
   border-left: solid 1px #4c4c4c;
   cursor: pointer;
