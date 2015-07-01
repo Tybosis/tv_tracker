@@ -1,6 +1,6 @@
-<div class="profile-links col-xs-12 col-sm-3 col-md-2 xs-text-center sm-text-left">
+<div class="profile-links">
   <nav>
-  <%= link_to "Shows", shows_path, :class => "xs-text-right sm-text-center" %>
+  <%= link_to "Shows", shows_path, :class => "" %>
     <ul>
       <li><%= link_to "Browse", shows_path %></li>
       <li><%= link_to "My Shows", profile_path(@current_profile) %></li>
@@ -17,7 +17,7 @@
   </nav>
 </div>
 
-<div class="search_bar col-xs-12 col-sm-4 xs-text-center sm-text-left">
+<div class="">
   <%= form_tag show_search_path, :method => 'get' do %>
     <%= text_field_tag :Search, params[:search] %>
     <%= submit_tag "Search" %>
