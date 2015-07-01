@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   # GET /shows
   # GET /shows.json
   def index
