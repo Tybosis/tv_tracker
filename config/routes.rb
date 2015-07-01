@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   resources :shows, only: [:index, :show, :create]
 
   get '/welcome' => 'welcome#index'
-  root 'static#index'
+
+  root 'shows#index'
 
   resources :contacts, only: [:new, :index]
 
