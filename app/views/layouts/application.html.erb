@@ -10,9 +10,9 @@
     <input type="checkbox" id="nav-trigger" class="nav-trigger" />
     <label for="nav-trigger">MENU</label>
       <ul class="navigation">
-        <li class="nav-item"><a href="#">Browse</a></li>
-        <li class="nav-item"><a href="#">Calendar</a></li>
-        <li class="nav-item"><a href="#">Settings</a></li>
+        <li class="nav-item"><%= link_to "Browse", shows_path %></li>
+        <li class="nav-item"><%= link_to "My Shows", <% if @profile_path(@current_profile) %></li>
+        <li class="nav-item"><%= link_to "Settings", profile_shows_path(@current_profile) %></li>
         <li class="nav-item"><a href="#">Help</a></li>
         <li class="nav-item"><a href="#">Contact</a></li>
       </ul>
