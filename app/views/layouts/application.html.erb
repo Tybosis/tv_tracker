@@ -6,8 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="container">
-    <nav class="hidden">
+<%= content_tag :body, class: "" + " "+(current_page?(root_url) ? "home" : "" ) do %>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger">MENU</label>
       <ul class="navigation">
         <li class="nav-item"><a href="#">Browse</a></li>
         <li class="nav-item"><a href="#">Calendar</a></li>
@@ -15,15 +16,8 @@
         <li class="nav-item"><a href="#">Help</a></li>
         <li class="nav-item"><a href="#">Contact</a></li>
       </ul>
-    </nav>
-    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-    <label for="nav-trigger">MENU</label>
-  <div class="site-wrap"
-    <%= content_tag :body, class: "" + (current_page?(root_url) ? "home" : "" ) do %>
-    <% flash.each do |key, value| %>
-    <div class="alert-box round <%= flash_class(key) %>">
-      <%= value %>
-    <% end %>
+  <div class="site-wrap">
+
     <header class= "twelve columns newbanner">
       <div>
         <%= link_to root_path, class: 'logo-container' do %>
@@ -38,5 +32,5 @@
         <%= render 'layouts/footer' %>
       <% end %>
     </div>
-</body
+</body>
 </html>
