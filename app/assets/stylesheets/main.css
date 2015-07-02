@@ -12,14 +12,10 @@
 }
 .newbanner {
   background-color: #e3e3e3;
-  /*margin-top: 1%;*/
 }
 .logo {
   min-width: 60px;
   margin: 1%;
-}
-.hidden {
-  display:none;
 }
 footer p {
   margin-bottom: 3%;
@@ -28,12 +24,6 @@ footer p {
   border-top: 0.225em solid #bfbfbf;
   color: #bfbfbf;
 }
-.mask {
-  opacity: 0;
-}
-.mask:hover {
-  opacity:1;
-}
 .poster:hover {
   opacity: 0.8;
   filter: alpha(opacity=80);
@@ -41,3 +31,24 @@ footer p {
 .block {
   float:left;
 }
+.poster-link{
+  position:relative;
+  display:block;
+}
+.poster-link img.poster{
+  width:100%;
+  position:relative;
+  z-index:1;
+}
+.plus_sign {
+  width: 60px;
+  height: 60px;
+  display:none;
+  position:absolute;
+  z-index: 2000;
+  top:45%;
+  left:45%;
+  opacity: 0.6;
+  filter: alpha(opacity=80);
+}
+
