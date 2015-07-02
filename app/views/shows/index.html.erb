@@ -1,7 +1,12 @@
   <section class="thirteen columns">
     <% @shows.each do |show| %>
-        <%= link_to show_path(show) do %>
-          <img class="four columns poster" src="<%= show.poster %>">
+        <%# link_to show_path(show), class: 'poster-link four columns' do %>
+          <!-- <img class="poster" src="<%= show.poster %>"> -->
+          <%# image_tag 'plusbutton.png', :class => 'plus_sign' %>
+        <%# end %>
+        <%= link_to show_path(show), class: 'poster-link four columns' do %>
+          <img class="poster" src="<%= show.poster %>">
+          <%= image_tag 'plusbutton.png', :class => 'plus_sign' %>
         <% end %>
         <% if @profile != nil %>
           <%= form_for @profile do |f| %>

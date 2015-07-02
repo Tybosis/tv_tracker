@@ -1,4 +1,10 @@
-$('.poster').hover(
-       function(){ $(this).addClass('.plusButton_show') },
-       function(){ $(this).removeClass('.plusButton_hide') }
-)
+$(document).ready(function(){
+  $('.poster-link').hover(
+    function(){
+      $(this).find('.plus_sign').show();
+    },
+    function(){
+      $(this).find('.plus_sign').hide();
+    }
+  );
+});
