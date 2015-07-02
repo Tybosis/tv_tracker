@@ -28,9 +28,9 @@
         <li class="nav-item"><a href="#">Help</a></li>
         <li class="nav-item"><a href="#">Contact</a></li>
       </ul>
-  <div class="site-wrap clearfix">
+  <div class="site-wrap clearfix container">
     <header class= "twelve columns newbanner">
-        <%= link_to root_path, class: 'logo-container' do %>
+        <%= link_to root_path, class: '' do %>
           <%= image_tag 'TvTrackerLogo.png', :class => 'logo' %>
         <% end %>
       <section class="search-bar">
@@ -40,13 +40,14 @@
         </div>
       </section>
     </header>
-    <div>
-      <%= content_tag :div, class: "main" do %>
+    <main class="block">
+
+      <%= content_tag :section, class: "clearfix" do %>
         <%= yield %>
       <% end %>
+    </main>
         <%= render 'layouts/footer' %>
       <% end %>
-    </div>
   </div>
 </body>
 </html>
