@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :search, :show, :new, :create]
   # GET /shows
   # GET /shows.json
   def index
@@ -35,7 +35,7 @@ class ShowsController < ApplicationController
   end
 
   def search
-    results = TVDB.search(params[:Search])
+    results = TVDB.search(params["search-bar__text-box".to_sym])
     @shows = results.reject { |show| show["SeriesName"] == "** 403: Series Not Permitted **" }.map { |show| show }
   end
 
