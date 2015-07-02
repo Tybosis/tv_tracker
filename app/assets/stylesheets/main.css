@@ -2,6 +2,11 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-size: 18px;
 }
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #476145;
+}
 /* Site Wrapper - Everything that isn't navigation */
 .site-wrap {
   min-height: 100%;
@@ -55,4 +60,3 @@ footer p {
   opacity: 0.6;
   filter: alpha(opacity=80);
 }
-
