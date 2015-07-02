@@ -49,6 +49,7 @@ label[for="nav-trigger"] {
   border-left: solid 1px #4c4c4c;
   cursor: pointer;
   background-size: contain;
+  background-color: #e3e3e3;
 }
 
 @media(max-width: 800px) {  /* smaller (mobile)*/

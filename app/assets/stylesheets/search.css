@@ -4,24 +4,37 @@
   width: 100%;
   overflow: hidden;
 }
-
 .search-bar__wrapper {
   margin-top: 1em;
   margin-bottom: 1em;
   float: right;
 }
-
 .search-bar__text-box--input {
   float: left;
-  height: 3em;
   margin-right: 1em;
-  width: 30em;
 }
-
 .search-bar__text-box--label {
   font-weight: bold;
   color: white;
-  margin-top: .84em;
-  margin-right: 1em;
   float: left;
+}
+@media (max-width: 50em) {    /*smaller*/
+  .search-bar__text-box--input {
+    height: 2em;
+    width: 20em;
+  }
+  .search-bar__text-box--label {
+    margin-top: .50em;
+    margin-right: .5em;
+  }
+}
+@media (min-width: 50em) {   /*larger*/
+  .search-bar__text-box--input {
+    height: 3em;
+    width: 30em;
+  }
+  .search-bar__text-box--label {
+    margin-top: .84em;
+    margin-right: 1em;
+  }
 }
