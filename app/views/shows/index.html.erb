@@ -1,5 +1,4 @@
-
-  <section>
+  <section class="thirteen columns">
     <% @shows.each do |show| %>
         <%= link_to show_path(show) do %>
           <img class="four columns poster" src="<%= show.poster %>">
@@ -12,4 +11,3 @@
         <% end %>
     <% end %>
   </section>
-
