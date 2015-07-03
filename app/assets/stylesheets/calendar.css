@@ -1,3 +1,27 @@
+.slideshow_nav{
+  height:1px;
+  overflow: visible;
+  position:absolute;
+  width:112%;
+  top:35%;
+  left:-6%;
+  z-index:3000;
+}
+.show_slider_left,
+.show_slider_right{
+  background-size: 100% 100%;
+  width:50px;
+  height:50px;
+  position:absolute;
+  cursor:pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 1000;
+}
 #calendar_container{
   position:relative;
   width:100%;
@@ -83,4 +107,3 @@
 .calendar_item.time.empty{
   background: #E3002A;
 }
-
