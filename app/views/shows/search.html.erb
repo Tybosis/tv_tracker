@@ -9,8 +9,6 @@
     <div class="search_show">
       <% if Show.exists?(:name => show["SeriesName"]) %>
           <%= link_to show["SeriesName"], show_path(Show.where(:name => show["SeriesName"]).first.id), class: "search_title" %>
-
-          <%= image_tag "http://thetvdb.com/banners/" + show["banner"], class: "search_banner" %>
         <% else %>
           <%= link_to show["SeriesName"], shows_path(series_id: show["seriesid"]), :method => :post, class: "search_title" %>
         <% end %>
