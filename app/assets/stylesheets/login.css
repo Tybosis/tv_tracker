@@ -10,6 +10,10 @@
   padding: 5%;
   margin: 5%;
 }
+.tracker_form_wrapper__text-box-large {
+  min-width: 600px;
+  font-size: 18px;
+}
 .actions {
   margin-top: 10px;
 }

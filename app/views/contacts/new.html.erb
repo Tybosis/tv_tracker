@@ -1,19 +1,21 @@
-<section class="contact-page clearfix">
-  <div class="contact-page__section">
+<section class="tracker_form_wrapper">
+  <h2>Want to send us a message?</h2>
+  <h1>Contact Us</h1>
     <%= form_tag(send_mail_path) do %>
-      <div class="">
-        <%= label_tag 'name', 'Name' %>
+      <div class="field">
+        <%= label_tag 'name', 'Name' %><br />
         <%= text_field_tag 'name', nil, class: '', placeholder: 'Your Name' %>
       </div>
-      <div class="">
-        <%= label_tag 'email', 'Email' %>
+      <div class="field">
+        <%= label_tag 'email', 'Email' %><br />
         <%= email_field_tag 'email', nil, class: '', placeholder: 'Your Email Address' %>
       </div>
-      <div class="">
-        <%= label_tag 'message', 'Message' %>
-        <%= text_area_tag 'message', nil, class: '', rows: 4, placeholder: 'Enter message here...' %>
+      <div class="field">
+        <%= label_tag 'message', 'Message' %><br />
+        <%= text_area_tag 'message', nil, class: 'tracker_form_wrapper__text-box-large', rows: 6, placeholder: 'Enter message here...' %>
       </div>
-      <%= submit_tag 'Submit', class: '' %>
+      <div class="actions">
+        <%= submit_tag 'Submit', class: '' %>
+      </div>
     <% end %>
-  </div>
 </div>
