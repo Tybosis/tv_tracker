@@ -1,0 +1,76 @@
+
+<%= form_for(@current_profile) do |f| %>
+  <% if @current_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@current_profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @current_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="clearfix">
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_url("avatars/avatar1.png"), :pic => "1", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_url("avatars/avatar2.png"), :pic => "2", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_url("avatars/avatar3.png"), :pic => "3", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_url("avatars/avatar4.png"), :pic => "4", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_url("avatars/avatar5.png"), :pic => "5", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_path("avatars/avatar6.png"), :pic => "6", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_path("avatars/avatar7.png"), :pic => "7", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_path("avatars/avatar8.png"), :pic => "8", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_path("avatars/avatar9.png"), :pic => "9", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+
+    <div class="profile-pic chooser rounded">
+      <%= image_tag asset_path("avatars/avatar10.png"), :pic => "10", :class => 'rounded' %>
+      <input type="checkbox" class="profile_checkbox">
+    </div>
+  </div>
+
+  <%= f.hidden_field :image_url, :id => 'profile-pic',:value => "avatars/avatar-blank.png" %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
