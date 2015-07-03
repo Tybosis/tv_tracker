@@ -20,7 +20,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 group :development, :test do
   gem 'byebug'
-  gem 'spring'
+  gem 'spring', '~> 1.3.6'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'pry'
