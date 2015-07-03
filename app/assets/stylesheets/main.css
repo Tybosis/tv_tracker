@@ -7,6 +7,33 @@ h1 {
   font-weight: bold;
   color: #476145;
 }
+p {
+  font-size:18px;
+  line-height: 22px;
+  text-indent: 2em;
+}
+.search_section div {
+  padding: 5%;
+}
+.search_section div:nth-child(odd){
+  background-color: #e3e3e3;
+}
+.action
+a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: bold;
+  font-size: 24px;
+}
+button {
+  background-color: #476145;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 75%;
+  margin-top: 2%;
+}
 /* Site Wrapper - Everything that isn't navigation */
 .site-wrap {
   min-height: 100%;
