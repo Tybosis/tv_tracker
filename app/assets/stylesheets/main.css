@@ -1,6 +1,11 @@
 body {
   font-family: 'PT Sans', sans-serif;
-  font-size: 18px;
+  font-size: 1.15em;
+}
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #476145;
 }
 /* Site Wrapper - Everything that isn't navigation */
 .site-wrap {
@@ -18,7 +23,7 @@ body {
   background-color: #e3e3e3;
 }
 .logo {
-  min-width: 60px;
+  min-width: 4em;
   margin: 1% 1% 1% 5%;
 }
 footer p {
@@ -28,6 +33,7 @@ footer p {
   border-top: 0.225em solid #bfbfbf;
   color: #bfbfbf;
 }
+
 .poster:hover {
   opacity: 0.8;
   filter: alpha(opacity=80);
@@ -45,14 +51,13 @@ footer p {
   z-index:1;
 }
 .plus_sign {
-  width: 60px;
-  height: 60px;
+  width: 4em;
+  height: 4em;
   display:none;
   position:absolute;
   z-index: 2000;
   top:45%;
   left:45%;
   opacity: 0.6;
-  filter: alpha(opacity=80);
+  filter: alpha(opacity=60);
 }
-
