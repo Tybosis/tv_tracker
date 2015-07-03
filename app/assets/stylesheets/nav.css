@@ -39,7 +39,6 @@ label[for="nav-trigger"] {  /* menu button */
   height: 1.5em;
   width: 5em;
   padding: .5em .5em 0 1em;
-  /*top: 34px;  /*calc from height of logo*/
   text-align: center;
   border-left: solid 1px #4c4c4c;
   cursor: pointer;
@@ -97,4 +96,3 @@ body {
   overflow:auto;
   zoom:1;
 }
-
