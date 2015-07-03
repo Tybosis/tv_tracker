@@ -27,7 +27,7 @@
         </li>
         <li class="nav-item">
           <% if @profile != nil && @profile.id != nil %>
-            <%= link_to "Settings", new_profile_path %>
+            <%= link_to "Settings", profiles_path %>
           <% else %>
             <%= link_to "Settings", new_user_registration_path %>
           <% end %>
