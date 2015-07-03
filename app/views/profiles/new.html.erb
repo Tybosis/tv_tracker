@@ -1,5 +1,19 @@
-<h1>New Profile</h1>
+<section class="">
+  <h1>Settings</h1>
+<section class="current_profile">
+  <h1>Profile Info</h1>
+  <%= link_to select_profile_path(profile) do %>
+        <% if profile.image_url %>
+          <%= image_tag asset_path(profile.image_url), :class => 'rounded' %>
+        <% else %>
+          <%= image_tag asset_path('avatars/avatar-blank.png'), :class => 'rounded' %>
+        <% end %>
 
+<section class="grey">
+  <h1>Change Avatar</h1>
 <%= render 'form' %>
 
 <%= link_to 'Back', profiles_path %>
+</section>
+</section>
+<% end %>
