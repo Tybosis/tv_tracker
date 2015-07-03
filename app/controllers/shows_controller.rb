@@ -16,7 +16,9 @@ class ShowsController < ApplicationController
   # GET /shows/1.json
   def show
     @show = Show.find(params[:id])
-    @profile = Profile.find(session[:profile_id])
+    if session[:profile_id]
+      @profile = Profile.find(session[:profile_id])
+    end
   end
 
   # POST /shows
