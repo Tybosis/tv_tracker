@@ -1,12 +1,32 @@
 .login-page {
-  width: 100%;
-  margin: 0;
+  display:block;
+  position: relative;
 }
 .login-page__sign-up {
-  float: left;
-  width: 50%;
+  background-color: #f2f2f2;
+  border: 1px solid #cbcbcb;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 5%;
+  line-height: 30px;
 }
 .login-page__log-in {
-  float: left;
-  width: 50%;
+  background-color: #f2f2f2;
+  border: 1px solid #cbcbcb;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 5%;
+  line-height: 30px;
+}
+#user_email {
+  height: 30px;
+  min-width: 300px;
+}
+#user_password{
+  height: 30px;
+  min-width: 300px;
+}
+#user_password_confirmation{
+  height: 30px;
+  min-width: 300px;
 }
