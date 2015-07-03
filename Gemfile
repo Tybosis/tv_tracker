@@ -16,6 +16,7 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'newrelic_rpm'
 gem 'jquery-turbolinks'
 gem 'delayed_job_active_record'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 group :development, :test do
   gem 'byebug'

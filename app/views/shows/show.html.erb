@@ -25,10 +25,13 @@
   <%= @show.overview %>
 </p>
 
-
-<%= form_for @profile do |f| %>
-  <%= f.hidden_field :show_ids, value: @profile.show_ids << @show.id %>
-  <%= f.submit "Add show to my profile" %>
+<% if @profile %>
+  <%= form_for @profile, remote: true, html: { id: "show-show-form"} do |f| %>
+    <%= f.hidden_field :show_ids, value: @profile.show_ids << @show.id %>
+    <%= f.submit "Add show to my profile" %>
+  <% end %>
+<% else %>
+  <%= button_to "Add show to my profile", new_user_registration_path, :method => :get  %>
 <% end %>
 
 <div class='clear'>
