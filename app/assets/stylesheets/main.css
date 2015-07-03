@@ -41,7 +41,7 @@ a {
   font-weight: bold;
   font-size: 24px;
 }
-button {
+button{
   background-color: #476145;
   color: white;
   padding: 8px;
@@ -49,6 +49,16 @@ button {
   font-size: 18px;
   margin-left: 75%;
   margin-top: 2%;
+}
+.button_to input{
+  background-color: #476145;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 2%;
+  margin-top: 3%;
+
 }
 /* Site Wrapper - Everything that isn't navigation */
 .site-wrap {
@@ -103,6 +113,15 @@ footer p {
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
-.show_details {
-
+.show_info {
+  padding:5%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+.show_info p{
+  padding: 2%;
+}
+.poster_name {
+  display: inline-block;
+  padding: 2%;
 }
