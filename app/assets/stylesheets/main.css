@@ -10,7 +10,6 @@ h1 {
 p {
   font-size:18px;
   line-height: 22px;
-  text-indent: 2em;
 }
 .search_section div {
   padding: 5%;
@@ -18,7 +17,19 @@ p {
 .search_section div:nth-child(odd){
   background-color: #e3e3e3;
 }
-.action
+.search_title {
+  text-decoration: none;
+  color: #476145;
+  margin-bottom: 2%;
+  line-height: 32px;
+}
+.search_title:hover {
+  color: #4d4d4d;
+  font-size: 1.35em;
+}
+.search_banner {
+  width:100%;
+}
 a {
   text-decoration: none;
   color: #4d4d4d;
@@ -60,7 +71,6 @@ footer p {
   border-top: 0.225em solid #bfbfbf;
   color: #bfbfbf;
 }
-
 .poster:hover {
   opacity: 0.8;
   filter: alpha(opacity=80);
