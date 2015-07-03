@@ -7,6 +7,11 @@ h1 {
   font-weight: bold;
   color: #476145;
 }
+h2 {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #4d4d4d;
+}
 p {
   font-size:18px;
   line-height: 22px;
@@ -97,4 +102,7 @@ footer p {
   left:45%;
   opacity: 0.6;
   filter: alpha(opacity=60);
+}
+.show_details {
+
 }
