@@ -1,3 +1,27 @@
+.slideshow_nav{
+  height:1px;
+  overflow: visible;
+  position:absolute;
+  width:112%;
+  top:35%;
+  left:-6%;
+  z-index:3000;
+}
+.show_slider_left,
+.show_slider_right{
+  background-size: 100% 100%;
+  width:50px;
+  height:50px;
+  position:absolute;
+  cursor:pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 1000;
+}
 #calendar_container{
   position:relative;
   width:80%;
@@ -63,7 +87,6 @@
 }
 
 .calendar_row .calendar_item{
-  /*padding:8px 12px;*/
   height: 40px;
   float:left;
   width:5em;
@@ -98,7 +121,6 @@
   width:100%;
   top:35%;
   left:-6%;
-  /*z-index:3000;*/
 }
 
 .show_slider_left{
