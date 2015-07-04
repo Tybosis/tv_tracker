@@ -11,7 +11,8 @@
 }
 .grey {
   background-color: #e3e3e3;
-  padding:5%;
+  padding:4%;
+  padding-top: 2%;
 }
 /*
 .profile_pic.sm{
@@ -23,9 +24,12 @@
   background:none;
 }*/
 
-.profile .name{
+.profile_name{
   margin-top: 10%;
   display: inline;
+}
+.profile_name~p{
+  display:inline;
 }
 .profile_checkbox {
   height: 20px;
@@ -34,12 +38,28 @@
   top: 5px;
   left: 5px;
 }
+.h1profile {
+  margin-top: 15px;
+  line-height: 24px;
+}
 .chooser {
   position: relative;
   width: 16%;
   display: inline;
   margin-left: 10px;
 }
+.options {
+  padding: 5%;
+}
+.field {
+  height: 30px;
+  min-width: 300px;
+  font-size: 18px;
+}
+.add_button {
+  margin:0%;
+}
+
 /*
 .profile-pic {
   width:100%;

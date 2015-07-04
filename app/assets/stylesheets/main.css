@@ -11,11 +11,15 @@ h2 {
   font-size: 1.25em;
   font-weight: bold;
   color: #4d4d4d;
+  line-height: 30px;
 }
 p {
   font-size:18px;
   line-height: 22px;
 }
+.rounded img {
+  width: 100%;
+}*/
 .search_section div {
   padding: 5%;
 }
@@ -90,9 +94,6 @@ footer p {
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
-.block {
-  float:left;
-}
 .poster-link{
   position:relative;
   display:block;
@@ -124,4 +125,16 @@ footer p {
 .poster_name {
   display: inline-block;
   padding: 2%;
+}
+.edit_profile input{
+  background-color: #476145;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 2%;
+}
+.poster img {
+  width: 33.33333%;
+  float: left;
 }

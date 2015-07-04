@@ -11,7 +11,7 @@
         <% if @profile != nil %>
           <%= form_for @profile, remote: true do |f| %>
             <%= f.hidden_field :show_ids, value: @profile.show_ids << show.id %>
-            <%= f.submit "Add to profile", :class => "center" %>
+
           <% end %>
         <% end %>
     <% end %>
