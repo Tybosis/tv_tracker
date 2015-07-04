@@ -1,34 +1,10 @@
-/*.slideshow_nav{
-  height:1px;
-  overflow: visible;
-  position:absolute;
-  width:112%;
-  top:35%;
-  left:-6%;
-  z-index:3000;
-}*/
-/*.show_slider_left,
-.show_slider_right{
-  background-size: 100% 100%;
-  width:50px;
-  height:50px;
-  position:absolute;
-  cursor:pointer;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  z-index: 1000;
-}*/
 #calendar_container{
   position:relative;
   width:80%;
   height:100%;
   max-height:700px;
   margin-top:25px;
-  border:3px solid #1498E3;
+  border:1px solid #cbcbcb;
 }
 
 .calendar_hider{
@@ -45,22 +21,26 @@
   z-index:3000;
   width:50%;
   max-width:220px;
-  border-right:3px solid #1498E3;
+  /*border-right:3px solid #4c4c4c;*/
 }
 .calendar_titles .calendar_banner{
   display:block;
-  border-bottom:3px solid #1498E3;
+  height: 40px;
+  border-bottom:3px solid #4c4c4c;
   width: 100%;
 }
-
-.calendar_titles :nth-child(2) .calendar_banner{
-  border-top:3px solid #1498E3;
+.calendar__title--header {
+  font-size: 1em;
+  line-height:1em;
+  padding: .4em;
+  color: white;
 }
-
+.calendar_titles :nth-child(2) .calendar_banner{
+  border-top:3px solid #4c4c4c;
+}
 .calendar_titles a:last-child .calendar_banner{
   border-bottom:none;
 }
-
 #calendar_slideshow{
   position:absolute;
   left:220px;
@@ -71,7 +51,7 @@
 }
 
 .calendar_row{
-  border-bottom:3px solid #1498E3;
+  border-bottom:3px solid #4c4c4c;
 }
 
 .calendar_row:last-child{
@@ -80,7 +60,7 @@
 
 .calendar_spacer{
   height:40px;
-  background:#1498E3;
+  background:#476145;
   color:white;
   text-align:center;
   font-size:1.3em;
@@ -91,21 +71,22 @@
   float:left;
   width:5em;
   text-align:center;
-  border-right:3px solid #1498E3;
+  border-right:3px solid #4c4c4c;
 }
 
 .calendar_item.head{
   font-size:1em;
   font-weight:bold;
+  color: #476145;
 }
 
 .calendar_item.time.full{
-  background:#35ED0A;
+  background:#614556;
   color:white;
 }
 
 .calendar_item.time.empty{
-  background: #E3002A;
+  background: #cbcbcb;
 }
 .show_slider{
   width: 90%;

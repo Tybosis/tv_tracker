@@ -11,8 +11,7 @@
   <div class="calendar_hider">
     <div class="calendar_titles">
       <div class="calendar_spacer">
-        <!-- <p style="font-size:20px; line-height:40px;">Shows</p> -->
-        <p>Shows</p>
+        <p class="calendar__title--header">SHOWS</p>
       </div>
       <% @profile.shows.each do |show| %>
         <%= link_to show_path(show) do %>
