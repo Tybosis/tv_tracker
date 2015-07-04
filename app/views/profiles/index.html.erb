@@ -1,6 +1,6 @@
 <section class="settings">
-  <section class="profile_info grey">
-    <h1>Profile Info</h1>
+  <section class="grey">
+
     <% @profiles.each do |profile| %>
     <section class="twelve columns profile">
       <%= link_to select_profile_path(profile) do %>
@@ -10,17 +10,21 @@
           <%= image_tag asset_path('avatars/avatar-blank.png'), :class => 'rounded' %>
         <% end %>
       <% end %>
-      <h2 class='profile_name'>Current profile:
-        <%= profile.name.capitalize %>
-      </h2>
-      <%= link_to 'New Profile', new_profile_path , :class => 'button' %>
+      <h1 class="h1profile">Profile Info</h1>
+      <h2 class='profile_name'>Current:</h2>
+        <p><%= profile.name.capitalize %></p>
+      <h2>Add new profile</h2>
+      <form>
+        <input class="field">
+        <button class="add_button">Add</button>
+      </form>
     </section>
     <div class="clear">&nbsp;</div>
     <%= link_to 'Edit', edit_profile_path(profile), :class => 'button' %>
     <%= link_to 'Delete', profile, method: :delete, :class => 'button', data: { confirm: 'Do you want to delete this profile?' } %>
     <% end %>
   </section>
-  <section>
+  <section class="options">
     <h1>Profile Options</h1>
     <%= render 'index_form' %>
   </section>
