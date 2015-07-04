@@ -1,6 +1,6 @@
 #calendar_container{
   position:relative;
-  width:100%;
+  width:80%;
   height:100%;
   max-height:700px;
   margin-top:25px;
@@ -26,6 +26,7 @@
 .calendar_titles .calendar_banner{
   display:block;
   border-bottom:3px solid #1498E3;
+  width: 100%;
 }
 
 .calendar_titles :nth-child(2) .calendar_banner{
@@ -62,16 +63,16 @@
 }
 
 .calendar_row .calendar_item{
-  padding:8px 12px;
+  /*padding:8px 12px;*/
   height: 40px;
   float:left;
-  width:100px;
+  width:5em;
   text-align:center;
   border-right:3px solid #1498E3;
 }
 
 .calendar_item.head{
-  font-size:1.2em;
+  font-size:1em;
   font-weight:bold;
 }
 
@@ -83,4 +84,45 @@
 .calendar_item.time.empty{
   background: #E3002A;
 }
+.show_slider{
+  width: 90%;
+  margin:20px auto;
+  position:relative;
+  overflow: visible;
+}
 
+.slideshow_nav{
+  height:1px;
+  overflow: visible;
+  position:absolute;
+  width:100%;
+  top:35%;
+  left:-6%;
+  /*z-index:3000;*/
+}
+
+.show_slider_left{
+  background: center left;
+  left:10%;
+}
+
+.show_slider_right{
+  background: center right;
+  right:-2%;
+}
+
+.show_slider_left,
+.show_slider_right{
+  background-size: 100% 100%;
+  width:50px;
+  height:50px;
+  position:absolute;
+  cursor:pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index:4000;
+}

@@ -1,13 +1,18 @@
-<div id="calendar_container" class="clearfix">
+<div id="calendar_container" class="tracker_form_wrapper clearfix">
   <div class="slideshow_nav">
-    <div class="show_slider_left">&nbsp;</div>
-    <div class="show_slider_right">&nbsp;</div>
+    <div>
+      <%= image_tag 'slideshow-right.png', :class => 'show_slider_left' %>
+    </div>
+    <div>
+      <%= image_tag 'slideshow-left.png', :class => 'show_slider_right' %>
+    </div>
   </div>
 
   <div class="calendar_hider">
     <div class="calendar_titles">
       <div class="calendar_spacer">
-        <p style="font-size:20px; line-height:40px;">Shows</p>
+        <!-- <p style="font-size:20px; line-height:40px;">Shows</p> -->
+        <p>Shows</p>
       </div>
       <% @profile.shows.each do |show| %>
         <%= link_to show_path(show) do %>
