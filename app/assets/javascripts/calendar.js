@@ -1,6 +1,15 @@
 $(document).ready(function(){
   //set width of slideshow
   //$('#calendar_slideshow').width(shows_count * (show_width + show_margin) )
+  var myshows = $('.calendar__banner');
+
+  if (myshows.length === 0) {
+    $('.calendar__slideshow_nav').addClass('no-display');
+    $( "#calendar__no-shows" ).removeClass( "no-display" );
+  } else {
+    $('.calendar__slideshow_nav').removeClass('no-display');
+    $( "#calendar__no-shows" ).addClass( "no-display" );
+  }
 
   item_width = $('.calendar_item').width() + 3;
 
@@ -34,5 +43,3 @@ function slide_right(mover){
 
   $(mover).css('left', left - item_width + "px");
 }
-
-
