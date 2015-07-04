@@ -1,4 +1,4 @@
-#calendar_container{
+#calendar__container{
   position:relative;
   width:80%;
   height:100%;
@@ -7,14 +7,14 @@
   border:1px solid #cbcbcb;
 }
 
-.calendar_hider{
+.calendar__hider{
   width:100%;
   height:100%;
   overflow:hidden;
   position:relative;
 }
 
-#calendar_container .calendar_titles{
+#calendar__container .calendar__titles{
   position:relative;
   top:0;
   left:0;
@@ -23,7 +23,7 @@
   max-width:220px;
   /*border-right:3px solid #4c4c4c;*/
 }
-.calendar_titles .calendar_banner{
+.calendar__titles .calendar__banner{
   display:block;
   height: 40px;
   border-bottom:3px solid #4c4c4c;
@@ -35,13 +35,13 @@
   padding: .4em;
   color: white;
 }
-.calendar_titles :nth-child(2) .calendar_banner{
+.calendar__titles :nth-child(2) .calendar__banner{
   border-top:3px solid #4c4c4c;
 }
-.calendar_titles a:last-child .calendar_banner{
+.calendar__titles a:last-child .calendar_banner{
   border-bottom:none;
 }
-#calendar_slideshow{
+#calendar__slideshow{
   position:absolute;
   left:220px;
   top:0;
@@ -50,15 +50,15 @@
   transition:left 1.5s;
 }
 
-.calendar_row{
+.calendar__row{
   border-bottom:3px solid #4c4c4c;
 }
 
-.calendar_row:last-child{
+.calendar__row:last-child{
   border-bottom:none;
 }
 
-.calendar_spacer{
+.calendar__spacer{
   height:40px;
   background:#476145;
   color:white;
@@ -66,7 +66,7 @@
   font-size:1.3em;
 }
 
-.calendar_row .calendar_item{
+.calendar__row .calendar__item{
   height: 40px;
   float:left;
   width:5em;
@@ -74,28 +74,28 @@
   border-right:3px solid #4c4c4c;
 }
 
-.calendar_item.head{
+.calendar__item.head{
   font-size:1em;
   font-weight:bold;
   color: #476145;
 }
 
-.calendar_item.time.full{
+.calendar__item.time.full{
   background:#614556;
   color:white;
 }
 
-.calendar_item.time.empty{
+.calendar__item.time.empty{
   background: #cbcbcb;
 }
-.show_slider{
+.calendar__show_slider{
   width: 90%;
   margin:20px auto;
   position:relative;
   overflow: visible;
 }
 
-.slideshow_nav{
+.calendar__slideshow_nav{
   height:1px;
   overflow: visible;
   position:absolute;
@@ -104,18 +104,18 @@
   left:-6%;
 }
 
-.show_slider_left{
+.calendar__show_slider_left{
   background: center left;
   left:10%;
 }
 
-.show_slider_right{
+.calendar__show_slider_right{
   background: center right;
   right:-2%;
 }
 
-.show_slider_left,
-.show_slider_right{
+.calendar__show_slider_left,
+.calendar__show_slider_right{
   background-size: 100% 100%;
   width:50px;
   height:50px;
@@ -128,4 +128,7 @@
   -ms-user-select: none;
   user-select: none;
   z-index:4000;
+}
+.no-display {
+  display: none;
 }
