@@ -103,22 +103,24 @@
   top:35%;
   left:-6%;
 }
-
+#calendar__slideshow:hover{
+  opacity: .8;
+}
 .calendar__show_slider_left{
-  background: center left;
-  left:10%;
+  background:center left;
+  left:33%;
 }
 
 .calendar__show_slider_right{
   background: center right;
-  right:-2%;
+  right:0%;
 }
 
 .calendar__show_slider_left,
 .calendar__show_slider_right{
   background-size: 100% 100%;
-  width:50px;
-  height:50px;
+  width:45px;
+  height:45px;
   position:absolute;
   cursor:pointer;
   -webkit-touch-callout: none;

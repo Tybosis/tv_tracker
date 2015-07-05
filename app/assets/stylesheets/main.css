@@ -138,3 +138,7 @@ footer p {
   width: 33.33333%;
   float: left;
 }
+.opacity6 {
+  opacity: 0.6;
+  display: none;
+}
