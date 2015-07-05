@@ -11,16 +11,16 @@ $(document).ready(function(){
     $( "#calendar__no-shows" ).addClass( "no-display" );
   }
 
-  item_width = $('.calendar_item').width() + 3;
+  item_width = $('.calendar__item').width() + 3;
 
   //add event handler to btn left
-  $('.slideshow_nav .show_slider_left').click(function(){
-    slide_left( $('#calendar_slideshow') );
+  $('.calendar__slideshow_nav .calendar__show_slider_left').click(function(){
+    slide_left( $('#calendar__slideshow') );
   });
 
   //add event handler to btn right
-  $('.slideshow_nav .show_slider_right').click(function(){
-    slide_right( $('#calendar_slideshow') );
+  $('.calendar__slideshow_nav .calendar__show_slider_right').click(function(){
+    slide_right( $('#calendar__slideshow') );
   });
 });
 
