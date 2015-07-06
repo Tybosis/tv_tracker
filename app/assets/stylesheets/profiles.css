@@ -51,11 +51,11 @@
 .options {
   padding: 5%;
 }
-.field {
+/*.field {
   height: 30px;
   min-width: 300px;
   font-size: 18px;
-}
+}*/
 .add_button {
   margin:0%;
 }
