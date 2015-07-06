@@ -1,26 +1,25 @@
-<div class="row" style="width:90%; margin:15px 5%;">
+<section class="">
   <%= link_to edit_profile_path @profile do %>
     <%= image_tag asset_path(@profile.image_url), class: "profile_pic sm right rounded" %>
   <% end %>
   <h2>Your Shows</h2>
-</div>
-
-<div class="profile_show_list clearfix">
-<% @profile.shows.each do |show| %>
-  <div class="profile_show">
-    <%= link_to show_path(show) do %>
-      <%= image_tag show.poster %>
-    <% end %>
-    <strong>
-    <%= link_to 'Remove Show', profile_remove_show_from_profile_path(@profile, show), :method => :delete %>
-    <strong>
-
-  </div>
-<% end %>
-</div>
-
+  </section>
+<section class="clearfix thirteen columns">
+    <% @profile.shows.each do |show| %>
+    <section class="four columns">
+      <%= link_to show_path(show), class: 'columns relative' do %>
+        <%= image_tag show.poster, class: "fixer" %>
+        <%= image_tag 'plusbutton.png', :class => 'plus_sign2' %>
+        <%= link_to show_path(show), class: 'four columns' do %>
+        <% end %>
+      <% end %>
+      <div>
+<%= link_to 'X Remove Show', profile_remove_show_from_profile_path(@profile, show),:class => 'delete_show', :method => :delete %>
+      </div>
+    </section>
+  <% end %>
 <div class="clear">&nbsp;</div>
-<%= link_to 'Add Show', shows_path, :class => 'button' %>
-<%= link_to 'Edit Profile', edit_profile_path(@profile), :class => 'button' %>
+
+
 
 

@@ -1,26 +1,18 @@
-
-<h1>Listing Shows</h1>
-
-<div class="show_slider clearfix ">
-  <div class="slideshow_nav">
-    <div class="show_slider_left">&nbsp;</div>
-    <div class="show_slider_right">&nbsp;</div>
-  </div>
-
-  <div class="shows_container">
-    <div class="shows_mover">
-      <% @shows.each do |show| %>
-        <div class="show">
-          <%= link_to show_path(show) do %>
-            <img src="<%= show.poster %>">
-          <% end %>
-          <%= form_for @profile do |f| %>
+  <section class="thirteen columns">
+    <% @shows.each do |show| %>
+        <%# link_to show_path(show), class: 'poster-link four columns' do %>
+          <!-- <img class="poster" src="<%= show.poster %>"> -->
+          <%# image_tag 'plusbutton.png', :class => 'plus_sign' %>
+        <%# end %>
+        <%= link_to show_path(show), class: 'poster-link four columns' do %>
+          <img class="poster" src="<%= show.poster %>">
+          <%= image_tag 'plusbutton.png', :class => 'plus_sign' %>
+        <% end %>
+        <% if @profile != nil %>
+          <%= form_for @profile, remote: true do |f| %>
             <%= f.hidden_field :show_ids, value: @profile.show_ids << show.id %>
-            <%= f.submit "Add to profile", :class => "center" %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
 
+          <% end %>
+        <% end %>
+    <% end %>
+  </section>

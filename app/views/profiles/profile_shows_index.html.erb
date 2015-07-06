@@ -1,25 +1,31 @@
-<div id="calendar_container" class="clearfix">
-  <div class="slideshow_nav">
-    <div class="show_slider_left">&nbsp;</div>
-    <div class="show_slider_right">&nbsp;</div>
+<div id="calendar__container" class="tracker_form_wrapper clearfix">
+  <div class="calendar__slideshow_nav">
+    <div>
+      <%= image_tag 'left_arrow.png', :class => 'calendar__show_slider_left opacity6' %>
+    </div>
+    <div>
+      <%= image_tag 'right_arrow.png', :class => 'calendar__show_slider_right opacity6' %>
+    </div>
   </div>
 
-  <div class="calendar_hider">
-    <div class="calendar_titles">
-      <div class="calendar_spacer">
-        <p style="font-size:20px; line-height:40px;">Shows</p>
+  <div class="calendar__hider">
+    <div class="calendar__titles">
+      <div class="calendar__spacer">
+        <p class="calendar__title--header">SHOWS</p>
       </div>
       <% @profile.shows.each do |show| %>
         <%= link_to show_path(show) do %>
-          <%= image_tag show.banner, :class => 'calendar_banner' %>
+          <%= image_tag show.banner, :class => 'calendar__banner' %>
         <% end %>
       <% end %>
     </div>
-
-    <div id="calendar_slideshow">
-      <div class='calendar_row clearfix'>
+    <section id="calendar__no-shows" class="calendar__no-shows-text">
+      <h1>You have no shows selected. Select some shows to track from the Browse page.</h1>
+    </section>
+    <div id="calendar__slideshow">
+      <div class='calendar__row clearfix'>
         <% (0..60).each do |day| %>
-          <div class="head calendar_item">
+          <div class="head calendar__item">
             <%= (Date.today + day).strftime("%a %e") %>
           </div>
         <% end %>
@@ -28,12 +34,12 @@
       <% @profile.shows.each do |show| %>
         <% episodes = show.episodes %>
 
-        <div class='calendar_row clearfix'>
+        <div class='calendar__row clearfix'>
           <% (0..60).each do |day| %>
             <% if playing_on?(Date.today + day, episodes) %>
-              <div class="time calendar_item full">
+              <div class="time calendar__item full">
             <% else %>
-              <div class="time calendar_item empty">
+              <div class="time calendar__item empty">
             <% end %>
               <%= show.air_time if playing_on?(Date.today + day, episodes) %>
             </div>

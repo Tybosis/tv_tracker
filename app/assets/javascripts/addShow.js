@@ -1,0 +1,18 @@
+$(document).ready(function(){
+  $('.poster-link').hover(
+    function(){
+      $(this).find('.plus_sign').show();
+    },
+    function(){
+      $(this).find('.plus_sign').hide();
+    }
+  );
+  $('.relative').hover(
+    function(){
+      $(this).find('.plus_sign2').show();
+    },
+    function(){
+      $(this).find('.plus_sign2').hide();
+    }
+  );
+});
