@@ -41,17 +41,19 @@ $(document).ready(function(){
 
   function hasScrolled() {
     var st = $(this).scrollTop();
+    var winHeight = $(window).height();
+    var docHeight = $(document).height();
+    var itemTop = $('#nav-trigger').position().top;
+
     if(Math.abs(lastScrollTop - st) <= delta) {
       return;
     }
-    if (st > lastScrollTop && st > navbarHeight){
+    if ((st > lastScrollTop && st > navbarHeight) || (lastScrollTop > st && itemTop > navbarHeight)){
       $('#nav-trigger-label').addClass('hide-nav-button');
       $('#nav-trigger').addClass('hide-nav-button');
-    } else {
-    if(st + $(window).height() < $(document).height()) {
+    } else if (st + winHeight < docHeight) {
       $('#nav-trigger-label').removeClass('hide-nav-button');
       $('#nav-trigger').removeClass('hide-nav-button');
-      }
     }
     lastScrollTop = st;
   }
