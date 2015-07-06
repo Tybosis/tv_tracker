@@ -8,7 +8,7 @@
 </head>
 <%= content_tag :body, class: "" + " "+(current_page?(root_url) ? "home" : "" ) do %>
     <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-    <label for="nav-trigger">MENU</label>
+    <label id="nav-trigger-label" for="nav-trigger">MENU</label>
       <ul class="navigation">
         <li class="nav-item">
           <% if current_user %>
