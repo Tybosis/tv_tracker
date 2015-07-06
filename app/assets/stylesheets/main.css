@@ -71,7 +71,6 @@ footer p {
   font-size: 18px;
   margin-left: 2%;
   margin-top: 3%;
-
 }
 /* Site Wrapper - Everything that isn't navigation */
 .site-wrap {
@@ -106,13 +105,21 @@ footer p {
   z-index:1;
 }
 .plus_sign {
-  width: 4em;
-  height: 4em;
+  height: 20%;
   display:none;
   position:absolute;
   z-index: 2000;
-  top:45%;
-  left:45%;
+  top:40%;
+  left:37%;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.plus_sign2 {
+  height: 20%;
+  position:absolute;
+  z-index: 2000;
+  top:50%;
+  left:37%;
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
@@ -142,7 +149,24 @@ footer p {
 }
 .opacity6 {
   opacity: 0.6;
-  display: none;
 }
-
-
+.delete_show{
+  background-color: #476145;
+  display:inline-block;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 2%;
+  margin-top: 5%;
+}
+.fixer {
+  width: 100%;
+  float:left;
+}
+.fixer:hover {
+  opacity:0.8;
+}
+.relative {
+  position: relative;
+}
