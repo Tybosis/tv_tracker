@@ -8,12 +8,12 @@ $(document).ready(function(){
     }
   );
   console.log ("running")
-  $('#calendar__slideshow').hover(
-    function(){
-      $('.opacity6').show();
-    },
-    function(){
-      $('.opacity6').hide();
-    }
-  );
+  // $('#calendar__slideshow').hover(
+  //   function(){
+  //     $('.opacity6').show();
+  //   },
+  //   function(){
+  //     $('.opacity6').hide();
+  //   }
+  // );
 });

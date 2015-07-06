@@ -49,15 +49,12 @@
   width:6100px;
   transition:left 1.5s;
 }
-
 .calendar__row{
   border-bottom:3px solid #4c4c4c;
 }
-
 .calendar__row:last-child{
-  border-bottom:none;
+  border-bottom:3px solid #4c4c4c;
 }
-
 .calendar__spacer{
   height:40px;
   background:#476145;
@@ -65,7 +62,6 @@
   text-align:center;
   font-size:1.3em;
 }
-
 .calendar__row .calendar__item{
   height: 40px;
   float:left;
@@ -73,18 +69,15 @@
   text-align:center;
   border-right:3px solid #4c4c4c;
 }
-
 .calendar__item.head{
   font-size:1em;
   font-weight:bold;
   color: #476145;
 }
-
 .calendar__item.time.full{
   background:#614556;
   color:white;
 }
-
 .calendar__item.time.empty{
   background: #cbcbcb;
 }
@@ -94,7 +87,6 @@
   position:relative;
   overflow: visible;
 }
-
 .calendar__slideshow_nav{
   height:1px;
   overflow: visible;
@@ -103,24 +95,22 @@
   top:35%;
   left:-6%;
 }
-#calendar__slideshow:hover{
+/*#calendar__slideshow:hover{
   opacity: .8;
-}
+}*/
 .calendar__show_slider_left{
   background:center left;
-  left:33%;
+  left:7%;
 }
-
 .calendar__show_slider_right{
   background: center right;
-  right:0%;
+  right:-5%;
 }
-
 .calendar__show_slider_left,
 .calendar__show_slider_right{
   background-size: 100% 100%;
-  width:45px;
-  height:45px;
+  width:50px;
+  height:50px;
   position:absolute;
   cursor:pointer;
   -webkit-touch-callout: none;
