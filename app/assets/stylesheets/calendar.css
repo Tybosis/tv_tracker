@@ -61,6 +61,7 @@
   color:white;
   text-align:center;
   font-size:1.3em;
+  border-top:3px solid #4c4c4c;
 }
 .calendar__row .calendar__item{
   height: 40px;
@@ -73,6 +74,7 @@
   font-size:1em;
   font-weight:bold;
   color: #476145;
+  border-top:3px solid #4c4c4c;
 }
 .calendar__item.time.full{
   background:#614556;
