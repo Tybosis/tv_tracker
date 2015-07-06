@@ -47,6 +47,9 @@ label[for="nav-trigger"] {  /* menu button */
   color: #476145;
   font-size: larger;
 }
+.hide-nav-button {
+  display:none;
+}
 @media(max-width: 800px) {  /* smaller (mobile)*/
   .site-wrap {
     z-index: 0;
@@ -69,7 +72,6 @@ label[for="nav-trigger"] {  /* menu button */
   }
 }
 @media (min-width: 800px) {  /* larger */
-
   /* Navigation Menu - List items */
   .nav-item {
     width: 18%;
@@ -87,7 +89,6 @@ label[for="nav-trigger"] {  /* menu button */
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
   }
 }
-
 body {
     /* Without this, the body has excess horizontal scroll when the menu is open */
   overflow-x: hidden;
