@@ -12,7 +12,8 @@
 }
 .tracker_form_wrapper__text-box-large {
   min-width: 600px;
-  font-size: 18px;
+  font-size: larger;
+  font-family: 'PT Sans', sans-serif;
 }
 .actions {
   margin-top: 10px;
