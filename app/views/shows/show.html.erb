@@ -1,9 +1,11 @@
-<h2>
+<section class="grey">
+
+
+<img src="<%= @show.poster %>" class="one-third column">
+<section class="show_info eight columns">
+<h1 class="poster_name">
   <%= @show.name %>
-</h2>
-
-<img src="<%= @show.poster %>" class="show_poster img_left">
-
+</h1>
 <p>
   <strong>Status:</strong>
   <%= @show.status %>
@@ -25,10 +27,14 @@
   <%= @show.overview %>
 </p>
 
-
-<%= form_for @profile do |f| %>
-  <%= f.hidden_field :show_ids, value: @profile.show_ids << @show.id %>
-  <%= f.submit "Add show to my profile" %>
+<% if @profile %>
+  <%= form_for @profile, remote: true, html: { id: "show-show-form"} do |f| %>
+    <%= f.hidden_field :show_ids, value: @profile.show_ids << @show.id %>
+    <%= f.submit "Track Show" %>
+  <% end %>
+<% else %>
+  <%= button_to "Track Show", new_user_registration_path, :method => :get  %>
 <% end %>
-
+</section>
 <div class='clear'>
+</section>

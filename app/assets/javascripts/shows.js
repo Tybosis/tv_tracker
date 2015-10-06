@@ -31,10 +31,8 @@ function slide_right(mover){
   left = parseInt( $(mover).css('left') );
 
   // alert(width + ", " + (width - 4 * show_width) + ", " + left)
-  if (Math.abs(left) > (width - 6 * show_width) ) 
+  if (Math.abs(left) > (width - 6 * show_width) )
     return false;
 
   $(mover).css('left', left - (show_width + show_margin) + "px");
 }
-
-

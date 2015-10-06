@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   resources :profiles do
     delete :remove_show_from_profile
@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   resources :shows, only: [:index, :show, :create]
 
   get '/welcome' => 'welcome#index'
-  root 'static#index'
+
+  root 'shows#index'
 
   resources :contacts, only: [:new, :index]
 
